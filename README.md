@@ -1,5 +1,7 @@
 # OpenSAGE website
 
+[![Build Status](https://travis-ci.org/OpenSAGE/Website.svg?branch=master)](https://travis-ci.org/OpenSAGE/Website)
+
 This is the website of the OpenSAGE project, based on `react-static`.
 
 Requires recent versions of both Node.js and `yarn` to build.

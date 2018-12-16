@@ -1,9 +1,12 @@
 import React from "react"
-import { withRouteData } from "react-static"
+import { withRouteData, Head } from "react-static"
 import { Link } from "@reach/router"
 
 export default withRouteData(({ post }) => (
-  <div>
+  <>
+    <Head>
+      <title>{post.title} - OpenSAGE</title>
+    </Head>
     <Link to="/blog/">{"<"} Back</Link>
     <br />
     <h3>{post.title}</h3>
@@ -11,5 +14,5 @@ export default withRouteData(({ post }) => (
       className="post-content"
       dangerouslySetInnerHTML={{ __html: post.html }}
     />
-  </div>
+  </>
 ))

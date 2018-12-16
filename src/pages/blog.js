@@ -1,11 +1,13 @@
 import React from "react"
-import { withRouteData } from "react-static"
+import { withRouteData, Head } from "react-static"
 import { Link } from "@reach/router"
 
 export default withRouteData(props => (
-  <div>
-    <h1>It's blog time.</h1>
-    <br />
+  <>
+    <Head>
+      <title>Blog - OpenSAGE</title>
+    </Head>
+    <h1>The OpenSAGE blog</h1>
     All Posts:
     <ul>
       {props.posts.map(post => (
@@ -14,5 +16,5 @@ export default withRouteData(props => (
         </li>
       ))}
     </ul>
-  </div>
+  </>
 ))

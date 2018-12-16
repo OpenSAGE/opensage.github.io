@@ -1,0 +1,32 @@
+.navbar {
+  border-bottom: 2px solid black;
+}
+
+.navbar__items {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+
+  list-style: none;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.nav-item {
+  display: inline-flex;
+}
+
+.nav-item:not(last-child) {
+  margin-right: 40px;
+}
+
+.nav-item a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-item a:hover {
+  text-decoration: underline;
+}

@@ -9,6 +9,15 @@ body {
 
   font-family: "Noto Serif TC", serif;
   font-size: 16px;
+  line-height: 1.6;
+}
+
+h1 {
+  margin-top: 2em;
+}
+
+h2 {
+  margin-top: 2em;
 }
 
 #root {

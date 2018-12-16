@@ -13,7 +13,7 @@ const App = () => (
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link
-        href="https://fonts.googleapis.com/css?family=Noto+Serif+TC|Teko:700"
+        href="https://fonts.googleapis.com/css?family=Noto+Serif+TC|Source+Code+Pro"
         rel="stylesheet"
       />
     </Head>

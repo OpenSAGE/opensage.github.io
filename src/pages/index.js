@@ -5,12 +5,12 @@ import { Row } from "../components/Layout"
 const Screenshot = ({ file, description }) => (
   <a
     className="responsive-image-container"
-    href={`/screenshots/${file}`}
+    href={`/assets/screenshots/${file}`}
     title={description}
   >
     <img
       className="responsive-image"
-      src={`/screenshots/${file}`}
+      src={`/assets/screenshots/${file}`}
       alt={description}
     />
   </a>

@@ -1,0 +1,15 @@
+.post-content img {
+  max-width: 100%;
+}
+
+.post-content h2 > a,
+.post-content h3 > a {
+  text-decoration: none;
+  color: initial;
+}
+
+.post-content code {
+  font-family: "Source Code Pro", "Menlo", "Consolas", monospace;
+  background: #eee;
+  color: #333;
+}

@@ -25,7 +25,7 @@ export default {
   getRoutes: async () => {
     const posts = getPosts()
 
-    const stuff = [
+    return [
       {
         path: "/blog",
         getData: async () => ({ posts }),
@@ -36,9 +36,5 @@ export default {
         }))
       }
     ]
-
-    console.dir(stuff, { depth: 10 })
-
-    return stuff
   }
 }

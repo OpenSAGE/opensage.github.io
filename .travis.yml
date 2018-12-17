@@ -14,3 +14,7 @@ deploy:
   target-branch: master
   on:
     branch: gh-pages
+
+branches:
+  only:
+    - gh-pages

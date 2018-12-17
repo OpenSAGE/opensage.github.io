@@ -13,7 +13,7 @@ export const Footer = () => (
         respective owners. Screenshots of copyrighted works are only used for
         demonstration purposes.
       </p>
-      <p>OpenSAGE {currentYear} ©</p>
+      <p>© OpenSAGE {currentYear}</p>
     </div>
   </footer>
 )

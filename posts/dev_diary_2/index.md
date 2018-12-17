@@ -1,6 +1,6 @@
 _[This post](http://timjones.io/blog/archive/2017/12/10/opensage-dev-diary-2-2017-12-10) was originally published on Tim's blog._
 
-Following on from [last week's post](/blog/archive/2017/12/03/opensage-dev-diary-2017-12-03), here is what's been happening this week in OpenSAGE.
+Following on from [last week's post](/blog/post/dev_diary_1/), here is what's been happening this week in OpenSAGE.
 
 ## Progress this week
 

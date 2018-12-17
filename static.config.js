@@ -20,7 +20,6 @@ markdownRenderer.heading = (text, level) => {
           </h${level}>`
 }
 
-// TODO: Implement thumbnails and link to full size
 markdownRenderer.image = (href, _title, text) => {
   const thumbPath = toThumbnailUrl(href)
   return `<a href="${href}"><img src="${thumbPath}" title="${text}"/></a>`

@@ -13,14 +13,14 @@
   text-align: justify;
 }
 
-.post-content pre {
+.post-content > pre {
   color: #333;
   background: #eee;
   padding: 1em;
   overflow-x: auto;
 }
 
-.post-content pre code {
+.post-content > pre code {
   font-family: "Source Code Pro", "Menlo", "Consolas", monospace;
   line-height: 1.2;
   font-size: 0.8rem;

@@ -11,5 +11,6 @@ deploy:
   keep-history: true
   local-dir: dist
   script: yarn build
+  target-branch: master
   on:
-    branch: master
+    branch: gh-pages

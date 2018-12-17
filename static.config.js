@@ -1,20 +1,16 @@
 import { readFileSync, readdirSync } from "fs"
 import * as path from "path"
-import { orderBy } from "lodash"
+import { orderBy, kebabCase } from "lodash"
 import marked from "marked"
 import chokidar from "chokidar"
 import { reloadRoutes } from "react-static/node"
-
-// Watch blog posts for changes
-chokidar
-  .watch("./posts/**/*.md", { ignoreInitial: true })
-  .on("all", () => reloadRoutes())
+import { toThumbnailUrl } from "./src/util"
 
 const markdownRenderer = new marked.Renderer()
 
 // Enable heading links
 markdownRenderer.heading = (text, level) => {
-  var escapedText = text.toLowerCase().replace(/[^\w]+/g, "-")
+  var escapedText = kebabCase(text)
 
   return `
           <h${level}>
@@ -26,7 +22,8 @@ markdownRenderer.heading = (text, level) => {
 
 // TODO: Implement thumbnails and link to full size
 markdownRenderer.image = (href, _title, text) => {
-  return `<img src="${href}" title="${text}"/>`
+  const thumbPath = toThumbnailUrl(href)
+  return `<a href="${href}"><img src="${thumbPath}" title="${text}"/></a>`
 }
 
 const postsRoot = path.join(__dirname, "posts")
@@ -53,6 +50,12 @@ function getPosts() {
 }
 
 export default {
+  onStart: () => {
+    // Watch blog posts for changes
+    chokidar
+      .watch("./posts/**/*.md", { ignoreInitial: true })
+      .on("all", () => reloadRoutes())
+  },
   getRoutes: async () => {
     const posts = getPosts()
 

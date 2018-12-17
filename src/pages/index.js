@@ -1,6 +1,7 @@
 import React from "react"
 import { withSiteData, Head } from "react-static"
 import { Row } from "../components/Layout"
+import { toThumbnailUrl } from "../util"
 
 const Screenshot = ({ file, description }) => (
   <a
@@ -10,7 +11,7 @@ const Screenshot = ({ file, description }) => (
   >
     <img
       className="responsive-image"
-      src={`/assets/screenshots/${file}`}
+      src={toThumbnailUrl(`/assets/screenshots/${file}`)}
       alt={description}
     />
   </a>

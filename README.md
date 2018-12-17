@@ -1,6 +1,6 @@
 # OpenSAGE website
 
-[![Build Status](https://travis-ci.org/OpenSAGE/Website.svg?branch=master)](https://travis-ci.org/OpenSAGE/Website)
+[![Build Status](https://travis-ci.org/OpenSAGE/opensage.github.io.svg?branch=master)](https://travis-ci.org/OpenSAGE/opensage.github.io)
 
 This is the website of the OpenSAGE project, based on `react-static`.
 

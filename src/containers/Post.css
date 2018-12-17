@@ -8,8 +8,27 @@
   color: initial;
 }
 
-.post-content code {
+.post-content p,
+.post-content li {
+  text-align: justify;
+}
+
+.post-content pre {
+  color: #333;
+  background: #eee;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+.post-content pre code {
+  font-family: "Source Code Pro", "Menlo", "Consolas", monospace;
+  line-height: 1.2;
+  font-size: 0.8rem;
+}
+
+.post-content p code {
   font-family: "Source Code Pro", "Menlo", "Consolas", monospace;
   background: #eee;
   color: #333;
+  padding: 2px 4px;
 }

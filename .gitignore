@@ -2,3 +2,5 @@ node_modules
 tmp
 dist
 repro
+
+public/assets/**/*-thumb.jpg

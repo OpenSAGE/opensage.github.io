@@ -30,9 +30,10 @@
   dependencies:
     "@babel/highlight" "7.0.0-beta.44"
 
-"@babel/core@^7.1.5":
+"@babel/core@^7.2.2":
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.2.2.tgz#07adba6dde27bb5ad8d8672f15fde3e08184a687"
+  integrity sha512-59vB0RWt09cAct5EIe58+NzGP4TFSD3Bz//2/ELy3ZeTeKF6VTD1AXlH8BGGbCX0PuobZBsIzO7IAI9PH67eKw==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/generator" "^7.2.2"
@@ -796,6 +797,16 @@
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.2.tgz#63985d3d8b02530e0869962f4da09142ee8e200e"
 
+"@hot-loader/react-dom@^16.7.0-alpha.2.3":
+  version "16.7.0-alpha.2.3"
+  resolved "https://registry.yarnpkg.com/@hot-loader/react-dom/-/react-dom-16.7.0-alpha.2.3.tgz#b68a852499de946f05b240799b2f318d2cdfebfd"
+  integrity sha512-2zAfIqgosyZbsKtiLY9NeebmTVp93cx2LGNh2w3qXa1qnfEELatGRzUglM1Mg0Q0GfL3HTIdmUVPuIzncLRUPA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.12.0-alpha.2"
+
 "@jimp/bmp@^0.6.0":
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/@jimp/bmp/-/bmp-0.6.0.tgz#6eb3ad441ed3f1418a32a89a4244285914b2a15c"
@@ -1485,12 +1496,13 @@ atob@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
 
-autoprefixer@^9.3.1:
-  version "9.4.2"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.4.2.tgz#0234d20900684fc4bfb67926493deb68384067f5"
+autoprefixer@^9.4.3:
+  version "9.4.3"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.4.3.tgz#c97384a8fd80477b78049163a91bbc725d9c41d9"
+  integrity sha512-/XSnzDepRkAU//xLcXA/lUWxpsBuw0WiriAHOqnxkuCtzLhaz+fL4it4gp20BQ8n5SyLzK/FOc7A0+u/rti2FQ==
   dependencies:
-    browserslist "^4.3.5"
-    caniuse-lite "^1.0.30000914"
+    browserslist "^4.3.6"
+    caniuse-lite "^1.0.30000921"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
     postcss "^7.0.6"
@@ -1556,9 +1568,17 @@ babel-plugin-emotion@^10.0.5:
     find-root "^1.1.0"
     source-map "^0.5.7"
 
-babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.4.0:
+babel-plugin-macros@^2.0.0:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.4.2.tgz#21b1a2e82e2130403c5ff785cba6548e9b644b28"
+  dependencies:
+    cosmiconfig "^5.0.5"
+    resolve "^1.8.1"
+
+babel-plugin-macros@^2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.4.3.tgz#870345aa538d85f04b4614fea5922b55c45dd551"
+  integrity sha512-M8cE1Rx0zgfKYBWAS+T6ZVCLGuTKdBI5Rn3fu9q6iVdH0UjaXdmF501/VEYn7kLHCgguhGNk5JBzOn64e2xDEA==
   dependencies:
     cosmiconfig "^5.0.5"
     resolve "^1.8.1"
@@ -1818,7 +1838,7 @@ browserslist@4.1.1:
     electron-to-chromium "^1.3.62"
     node-releases "^1.0.0-alpha.11"
 
-browserslist@^4.0.0, browserslist@^4.3.4, browserslist@^4.3.5:
+browserslist@^4.0.0, browserslist@^4.3.4, browserslist@^4.3.6:
   version "4.3.6"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.3.6.tgz#0f9d9081afc66b36f477c6bdf3813f784f42396a"
   dependencies:
@@ -1989,7 +2009,7 @@ caniuse-api@^3.0.0:
     lodash.memoize "^4.1.2"
     lodash.uniq "^4.5.0"
 
-caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000884, caniuse-lite@^1.0.30000914, caniuse-lite@^1.0.30000921:
+caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000884, caniuse-lite@^1.0.30000921:
   version "1.0.30000921"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000921.tgz#7a607c1623444b22351d834e093aedda3c42fbe8"
 
@@ -2470,9 +2490,10 @@ css-declaration-sorter@^4.0.1:
     postcss "^7.0.1"
     timsort "^0.3.0"
 
-css-loader@^2.0.0:
+css-loader@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-2.0.1.tgz#2e51a15449ab3f7195b7e1bc00a407460016a3b3"
+  integrity sha512-XIVwoIOzSFRVsafOKa060GJ/A70c0IP/C1oVPHEX4eHIFF39z0Jl7j8Kua1SUTiqWDupUnbY3/yQx9r7EUB35w==
   dependencies:
     icss-utils "^4.0.0"
     loader-utils "^1.0.2"
@@ -5465,10 +5486,6 @@ opener@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/opener/-/opener-1.5.1.tgz#6d2f0e77f1a0af0032aca716c2c1fbb8e7e8abed"
 
-openport@^0.0.5:
-  version "0.0.5"
-  resolved "http://registry.npmjs.org/openport/-/openport-0.0.5.tgz#61c6acba8329aed7637e62964efb58624e98265c"
-
 opn@5.4.0, opn@^5.1.0:
   version "5.4.0"
   resolved "https://registry.yarnpkg.com/opn/-/opn-5.4.0.tgz#cb545e7aab78562beb11aa3bfabc7042e1761035"
@@ -5835,7 +5852,7 @@ pngjs@^3.0.0, pngjs@^3.3.3:
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-3.3.3.tgz#85173703bde3edac8998757b96e5821d0966a21b"
   integrity sha512-1n3Z4p3IOxArEs1VRXnZ/RXdfEniAUS9jb68g58FIXMNkPJeZd+Qh4Uq7/e0LVxAQGos1eIUrqrt4FpjdnEd+Q==
 
-portfinder@^1.0.9:
+portfinder@^1.0.20, portfinder@^1.0.9:
   version "1.0.20"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.20.tgz#bea68632e54b2e13ab7b0c4775e9b41bf270e44a"
   dependencies:
@@ -6337,9 +6354,13 @@ raw-body@2.3.3:
     iconv-lite "0.4.23"
     unpipe "1.0.0"
 
-raw-loader@^0.5.1:
-  version "0.5.1"
-  resolved "http://registry.npmjs.org/raw-loader/-/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
+raw-loader@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-1.0.0.tgz#3f9889e73dadbda9a424bce79809b4133ad46405"
+  integrity sha512-Uqy5AqELpytJTRxYT4fhltcKPj0TyaEpzJDcGz7DFJi+pQOOi3GjR/DOdxTkTsF+NzhnldIoG6TORaBlInUuqA==
+  dependencies:
+    loader-utils "^1.1.0"
+    schema-utils "^1.0.0"
 
 rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
   version "1.2.8"
@@ -6419,6 +6440,21 @@ react-hot-loader@^4.3.12:
     shallowequal "^1.0.2"
     source-map "^0.7.3"
 
+react-hot-loader@^4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.6.1.tgz#7b4ebbbf931d864e78b31c25eee813fcf1ecfa99"
+  integrity sha512-BrMa/zyVq7aeHa2TDG6cVFgMiUut6OHZ/RkPqVHovsFbo0VI8VX7qCz2dYTDHFc9HtVrSUbJGd9LpFPIWtExBg==
+  dependencies:
+    fast-levenshtein "^2.0.6"
+    global "^4.3.0"
+    hoist-non-react-statics "^2.5.0"
+    loader-utils "^1.1.0"
+    lodash.merge "^4.6.1"
+    prop-types "^15.6.1"
+    react-lifecycles-compat "^3.0.4"
+    shallowequal "^1.0.2"
+    source-map "^0.7.3"
+
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
@@ -6430,12 +6466,13 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
-react-static@^6.0.2:
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/react-static/-/react-static-6.0.4.tgz#a79495706968a8ebf8b0da19bb117a025861c487"
+react-static@^6.0.6:
+  version "6.0.6"
+  resolved "https://registry.yarnpkg.com/react-static/-/react-static-6.0.6.tgz#c66018f2e2b8d9460306e5717c5eb02272243fa3"
+  integrity sha512-86NShwTc7VTyRWoSoa/Txsok7k7Oze+L6PIMQ90dIPROwb6Nw0ZiPLOTtmuiXRTLMtZwyyapYVQ9wkjTf4a0Pw==
   dependencies:
     "@babel/cli" "^7.1.5"
-    "@babel/core" "^7.1.5"
+    "@babel/core" "^7.2.2"
     "@babel/plugin-proposal-class-properties" "^7.0.0"
     "@babel/plugin-proposal-export-default-from" "^7.0.0"
     "@babel/plugin-proposal-optional-chaining" "^7.0.0"
@@ -6447,12 +6484,13 @@ react-static@^6.0.2:
     "@babel/preset-stage-0" "^7.0.0"
     "@babel/register" "^7.0.0"
     "@babel/runtime" "^7.1.5"
+    "@hot-loader/react-dom" "^16.7.0-alpha.2.3"
     "@reach/router" "^1.2.1"
-    autoprefixer "^9.3.1"
+    autoprefixer "^9.4.3"
     axios "^0.18.0"
     babel-core "7.0.0-bridge.0"
     babel-loader "^8.0.0"
-    babel-plugin-macros "^2.4.0"
+    babel-plugin-macros "^2.4.3"
     babel-plugin-transform-react-remove-prop-types "^0.4.20"
     babel-plugin-universal-import "^3.0.2"
     babel-preset-react-static "^6.0.0-beta.31"
@@ -6461,7 +6499,7 @@ react-static@^6.0.2:
     chokidar "^2.0.4"
     circular-dependency-plugin "^5.0.2"
     cors "^2.8.5"
-    css-loader "^2.0.0"
+    css-loader "^2.0.1"
     download-git-repo "^1.1.0"
     eslint-config-react-tools "^1.0.0"
     extract-css-chunks-webpack-plugin "^3.2.1"
@@ -6477,20 +6515,20 @@ react-static@^6.0.2:
     match-sorter "^2.2.3"
     minimist "^1.2.0"
     mutation-observer "^1.0.3"
-    openport "^0.0.5"
     optimize-css-assets-webpack-plugin "^5.0.0"
+    portfinder "^1.0.20"
     postcss-flexbugs-fixes "^4.1.0"
     postcss-loader "^3.0.0"
     pretty-error "^2.1.1"
     progress "^2.0.1"
     prop-types "^15.6.1"
     raf "^3.4.1"
-    raw-loader "^0.5.1"
-    react "^16.6.3"
+    raw-loader "^1.0.0"
+    react "^16.7.0-alpha.2"
     react-dev-utils "^6.1.1"
     react-dom "^16.6.3"
     react-helmet "^5.2.0"
-    react-hot-loader "^4.3.12"
+    react-hot-loader "^4.6.1"
     react-universal-component "^3.0.2"
     resolve-from "^4.0.0"
     serve "^10.1.1"
@@ -6527,6 +6565,16 @@ react@^16.6.3:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.11.2"
+
+react@^16.7.0-alpha.2:
+  version "16.7.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.7.0-alpha.2.tgz#924f2ae843a46ea82d104a8def7a599fbf2c78ce"
+  integrity sha512-Xh1CC8KkqIojhC+LFXd21jxlVtzoVYdGnQAi/I2+dxbmos9ghbx5TQf9/nDxc4WxaFfUQJkya0w1k6rMeyIaxQ==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.12.0-alpha.2"
 
 read-pkg-up@^2.0.0:
   version "2.0.0"
@@ -6830,6 +6878,14 @@ sax@>=0.6.0, sax@^1.2.4, sax@~1.2.4:
 scheduler@^0.11.2:
   version "0.11.3"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.11.3.tgz#b5769b90cf8b1464f3f3cfcafe8e3cd7555a2d6b"
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+
+scheduler@^0.12.0-alpha.2:
+  version "0.12.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.12.0-alpha.3.tgz#59afcaba1cb79e3e8bee91de94eb8f42c9152c2b"
+  integrity sha512-KADuBlOWSrT/DCt/oA+NgsNamRCsfz7wj+leaeGjGHipNClsqhjOPogKkJgem6WLAv/QzxW8bE7zlGc9OxiYSQ==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"

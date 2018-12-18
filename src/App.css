@@ -88,3 +88,20 @@ Utility styles: Grids, responsive images and so on.
 .responsive-image-container + .responsive-image-container {
   margin-left: 16px;
 }
+
+@media screen and (max-width: 450px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .responsive-image {
+    margin-top: 16px;
+    margin-left: 0px;
+  }
+
+  .responsive-image + .responsive-image,
+  .responsive-image-container + .responsive-image-container {
+    margin-left: 0px;
+    margin-top: 16px;
+  }
+}

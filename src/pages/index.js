@@ -34,19 +34,23 @@ export default withSiteData(() => (
 
     <Row>
       <Screenshot
-        file="screenshot-1.jpg"
-        description="A picture of the Command & Conquer: Generals main menu, running in OpenSAGE."
+        file="main-menu.jpg"
+        description="Command & Conquer: Generals main menu, running in OpenSAGE."
       />
     </Row>
 
     <Row>
       <Screenshot
-        file="screenshot-1.jpg"
-        description="An another picture of the main menu."
+        file="viewer-2.png"
+        description="OpenSAGE asset viewer showing a map from the China campaign of Generals with shadow maps enabled."
       />
       <Screenshot
-        file="screenshot-1.jpg"
-        description="The last picture of the main menu."
+        file="in-game-1.png"
+        description="OpenSAGE in-game, running a skirmish match as a USA player."
+      />
+      <Screenshot
+        file="viewer-3.png"
+        description="OpenSAGE asset viewer displaying the credits window from Zero Hour."
       />
     </Row>
   </>

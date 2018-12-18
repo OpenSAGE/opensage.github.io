@@ -3,9 +3,10 @@
 }
 
 .navbar__items {
-  max-width: 650px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 16px;
 
   list-style: none;
 

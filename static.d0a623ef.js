@@ -110,7 +110,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 32);
+/******/ 	return __webpack_require__(__webpack_require__.s = 33);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -263,7 +263,7 @@ exports.onLoading = exports.withLoading = exports.Loading = void 0;
 
 var _utils = __webpack_require__(10);
 
-var _reactHelmet = __webpack_require__(42);
+var _reactHelmet = __webpack_require__(43);
 
 var _browser = __webpack_require__(8);
 
@@ -278,17 +278,17 @@ Object.keys(_browser).forEach(function (key) {
   });
 });
 
-var _scrollTo = _interopRequireDefault(__webpack_require__(23));
+var _scrollTo = _interopRequireDefault(__webpack_require__(25));
 
-var _RouteData = _interopRequireWildcard(__webpack_require__(49));
+var _RouteData = _interopRequireWildcard(__webpack_require__(50));
 
-var _SiteData = _interopRequireWildcard(__webpack_require__(50));
+var _SiteData = _interopRequireWildcard(__webpack_require__(51));
 
-var _Prefetch = _interopRequireDefault(__webpack_require__(51));
+var _Prefetch = _interopRequireDefault(__webpack_require__(52));
 
-var _Routes = _interopRequireDefault(__webpack_require__(25));
+var _Routes = _interopRequireDefault(__webpack_require__(27));
 
-var _Root = _interopRequireDefault(__webpack_require__(52));
+var _Root = _interopRequireDefault(__webpack_require__(53));
 
 function _interopRequireWildcard(obj) {
   if (obj && obj.__esModule) {
@@ -404,11 +404,11 @@ exports.templateErrorByPath = exports.templatesByPath = exports.registerTemplate
 
 var _regenerator = _interopRequireDefault(__webpack_require__(9));
 
-var _axios = _interopRequireDefault(__webpack_require__(20));
+var _axios = _interopRequireDefault(__webpack_require__(22));
 
 var _utils = __webpack_require__(10);
 
-var _Visibility = _interopRequireDefault(__webpack_require__(21));
+var _Visibility = _interopRequireDefault(__webpack_require__(23));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
@@ -1179,7 +1179,7 @@ exports.cleanSlashes = exports.trimDoubleSlashes = exports.trimTrailingSlashes =
 
 var _regenerator = _interopRequireDefault(__webpack_require__(9));
 
-var _swimmer = __webpack_require__(38);
+var _swimmer = __webpack_require__(39);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
@@ -1691,7 +1691,7 @@ var _createClass = function () {
   };
 }();
 
-var _requireUniversalModule = __webpack_require__(34);
+var _requireUniversalModule = __webpack_require__(35);
 
 Object.defineProperty(exports, 'CHUNK_NAMES', {
   enumerable: true,
@@ -1706,7 +1706,7 @@ Object.defineProperty(exports, 'MODULE_IDS', {
   }
 });
 
-var _reportChunks = __webpack_require__(36);
+var _reportChunks = __webpack_require__(37);
 
 Object.defineProperty(exports, 'ReportChunks', {
   enumerable: true,
@@ -1719,17 +1719,17 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(16);
+var _propTypes = __webpack_require__(18);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _hoistNonReactStatics = __webpack_require__(37);
+var _hoistNonReactStatics = __webpack_require__(38);
 
 var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
 
 var _requireUniversalModule2 = _interopRequireDefault(_requireUniversalModule);
 
-var _utils = __webpack_require__(15);
+var _utils = __webpack_require__(17);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
@@ -2113,11 +2113,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _utils = __webpack_require__(15);
+var _utils = __webpack_require__(17);
 
 var requireById = function requireById(id) {
   if (!(0, _utils.isWebpack)() && typeof id === 'string') {
-    return __webpack_require__(35)("" + id);
+    return __webpack_require__(36)("" + id);
   }
 
   return __webpack_require__('' + id);
@@ -2324,6 +2324,18 @@ function toComment(sourceMap) {
 
 /***/ }),
 /* 15 */
+/***/ (function(module, exports) {
+
+module.exports = require("moment");
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+module.exports = require("lodash");
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2489,13 +2501,13 @@ var cacheProm = exports.cacheProm = function cacheProm(pr, chunkName, props, pro
 };
 
 /***/ }),
-/* 16 */
+/* 18 */
 /***/ (function(module, exports) {
 
 module.exports = require("prop-types");
 
 /***/ }),
-/* 17 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2592,13 +2604,13 @@ function Spinner() {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(2)(module)))
 
 /***/ }),
-/* 18 */
+/* 20 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom");
 
 /***/ }),
-/* 19 */
+/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2610,18 +2622,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var babel_plugin_universal_import_universalImport__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babel_plugin_universal_import_universalImport__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _home_travis_build_OpenSAGE_opensage_github_io_node_modules_react_static_node_modules_react_universal_component_dist_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
 /* harmony import */ var _home_travis_build_OpenSAGE_opensage_github_io_node_modules_react_static_node_modules_react_universal_component_dist_index_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_home_travis_build_OpenSAGE_opensage_github_io_node_modules_react_static_node_modules_react_universal_component_dist_index_js__WEBPACK_IMPORTED_MODULE_2__);
-Object(_home_travis_build_OpenSAGE_opensage_github_io_node_modules_react_static_node_modules_react_universal_component_dist_index_js__WEBPACK_IMPORTED_MODULE_2__["setHasBabelPlugin"])();var universalOptions={loading:function loading(){return null;},error:function error(props){console.error(props.error);return React.createElement("div",null,"An error occurred loading this page's template. More information is available in the console.");}};var t_0=_home_travis_build_OpenSAGE_opensage_github_io_node_modules_react_static_node_modules_react_universal_component_dist_index_js__WEBPACK_IMPORTED_MODULE_2___default()(babel_plugin_universal_import_universalImport__WEBPACK_IMPORTED_MODULE_1___default()({id:"../src/pages/404.js",load:function load(){return Promise.all([Promise.resolve(/* import() | src-pages-404 */).then(__webpack_require__.bind(null, 27))]).then(function(proms){return proms[0];});},path:function path(){return path__WEBPACK_IMPORTED_MODULE_0___default.a.join(__dirname,'../src/pages/404.js');},resolve:function resolve(){return /*require.resolve*/(27);},chunkName:function chunkName(){return"src-pages-404";}}),universalOptions);var t_1=_home_travis_build_OpenSAGE_opensage_github_io_node_modules_react_static_node_modules_react_universal_component_dist_index_js__WEBPACK_IMPORTED_MODULE_2___default()(babel_plugin_universal_import_universalImport__WEBPACK_IMPORTED_MODULE_1___default()({id:"../src/pages/blog.js",load:function load(){return Promise.all([Promise.resolve(/* import() | src-pages-blog */).then(__webpack_require__.bind(null, 28))]).then(function(proms){return proms[0];});},path:function path(){return path__WEBPACK_IMPORTED_MODULE_0___default.a.join(__dirname,'../src/pages/blog.js');},resolve:function resolve(){return /*require.resolve*/(28);},chunkName:function chunkName(){return"src-pages-blog";}}),universalOptions);var t_2=_home_travis_build_OpenSAGE_opensage_github_io_node_modules_react_static_node_modules_react_universal_component_dist_index_js__WEBPACK_IMPORTED_MODULE_2___default()(babel_plugin_universal_import_universalImport__WEBPACK_IMPORTED_MODULE_1___default()({id:"../src/containers/Post",load:function load(){return Promise.all([Promise.resolve(/* import() | src-containers-Post */).then(__webpack_require__.bind(null, 29))]).then(function(proms){return proms[0];});},path:function path(){return path__WEBPACK_IMPORTED_MODULE_0___default.a.join(__dirname,'../src/containers/Post');},resolve:function resolve(){return /*require.resolve*/(29);},chunkName:function chunkName(){return"src-containers-Post";}}),universalOptions);var t_3=_home_travis_build_OpenSAGE_opensage_github_io_node_modules_react_static_node_modules_react_universal_component_dist_index_js__WEBPACK_IMPORTED_MODULE_2___default()(babel_plugin_universal_import_universalImport__WEBPACK_IMPORTED_MODULE_1___default()({id:"../src/pages/index.js",load:function load(){return Promise.all([Promise.resolve(/* import() | src-pages-index */).then(__webpack_require__.bind(null, 30))]).then(function(proms){return proms[0];});},path:function path(){return path__WEBPACK_IMPORTED_MODULE_0___default.a.join(__dirname,'../src/pages/index.js');},resolve:function resolve(){return /*require.resolve*/(30);},chunkName:function chunkName(){return"src-pages-index";}}),universalOptions);var template404ID=0;// Template Map
+Object(_home_travis_build_OpenSAGE_opensage_github_io_node_modules_react_static_node_modules_react_universal_component_dist_index_js__WEBPACK_IMPORTED_MODULE_2__["setHasBabelPlugin"])();var universalOptions={loading:function loading(){return null;},error:function error(props){console.error(props.error);return React.createElement("div",null,"An error occurred loading this page's template. More information is available in the console.");}};var t_0=_home_travis_build_OpenSAGE_opensage_github_io_node_modules_react_static_node_modules_react_universal_component_dist_index_js__WEBPACK_IMPORTED_MODULE_2___default()(babel_plugin_universal_import_universalImport__WEBPACK_IMPORTED_MODULE_1___default()({id:"../src/pages/404.js",load:function load(){return Promise.all([Promise.resolve(/* import() | src-pages-404 */).then(__webpack_require__.bind(null, 29))]).then(function(proms){return proms[0];});},path:function path(){return path__WEBPACK_IMPORTED_MODULE_0___default.a.join(__dirname,'../src/pages/404.js');},resolve:function resolve(){return /*require.resolve*/(29);},chunkName:function chunkName(){return"src-pages-404";}}),universalOptions);var t_1=_home_travis_build_OpenSAGE_opensage_github_io_node_modules_react_static_node_modules_react_universal_component_dist_index_js__WEBPACK_IMPORTED_MODULE_2___default()(babel_plugin_universal_import_universalImport__WEBPACK_IMPORTED_MODULE_1___default()({id:"../src/pages/blog.js",load:function load(){return Promise.all([Promise.resolve(/* import() | src-pages-blog */).then(__webpack_require__.bind(null, 30))]).then(function(proms){return proms[0];});},path:function path(){return path__WEBPACK_IMPORTED_MODULE_0___default.a.join(__dirname,'../src/pages/blog.js');},resolve:function resolve(){return /*require.resolve*/(30);},chunkName:function chunkName(){return"src-pages-blog";}}),universalOptions);var t_2=_home_travis_build_OpenSAGE_opensage_github_io_node_modules_react_static_node_modules_react_universal_component_dist_index_js__WEBPACK_IMPORTED_MODULE_2___default()(babel_plugin_universal_import_universalImport__WEBPACK_IMPORTED_MODULE_1___default()({id:"../src/containers/Post",load:function load(){return Promise.all([Promise.resolve(/* import() | src-containers-Post */).then(__webpack_require__.bind(null, 31))]).then(function(proms){return proms[0];});},path:function path(){return path__WEBPACK_IMPORTED_MODULE_0___default.a.join(__dirname,'../src/containers/Post');},resolve:function resolve(){return /*require.resolve*/(31);},chunkName:function chunkName(){return"src-containers-Post";}}),universalOptions);var t_3=_home_travis_build_OpenSAGE_opensage_github_io_node_modules_react_static_node_modules_react_universal_component_dist_index_js__WEBPACK_IMPORTED_MODULE_2___default()(babel_plugin_universal_import_universalImport__WEBPACK_IMPORTED_MODULE_1___default()({id:"../src/pages/index.js",load:function load(){return Promise.all([Promise.resolve(/* import() | src-pages-index */).then(__webpack_require__.bind(null, 32))]).then(function(proms){return proms[0];});},path:function path(){return path__WEBPACK_IMPORTED_MODULE_0___default.a.join(__dirname,'../src/pages/index.js');},resolve:function resolve(){return /*require.resolve*/(32);},chunkName:function chunkName(){return"src-pages-index";}}),universalOptions);var template404ID=0;// Template Map
 /* harmony default export */ __webpack_exports__["default"] = ([t_0,t_1,t_2,t_3]);
 /* WEBPACK VAR INJECTION */}.call(this, "/"))
 
 /***/ }),
-/* 20 */
+/* 22 */
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
 
 /***/ }),
-/* 21 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2640,7 +2652,7 @@ exports.default = onVisible;
 
 if (typeof document !== 'undefined') {
   // Polyfill that shiz!
-  __webpack_require__(39); // Do manual polling for intersections every second. This isn't very fast
+  __webpack_require__(40); // Do manual polling for intersections every second. This isn't very fast
   // but should handle most edge cases for now
 
 
@@ -2688,7 +2700,7 @@ function onVisible(element, callback) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(2)(module)))
 
 /***/ }),
-/* 22 */
+/* 24 */
 /***/ (function(module, exports) {
 
 exports.__esModule = true;
@@ -2749,7 +2761,7 @@ var SELF_CLOSING_TAGS = exports.SELF_CLOSING_TAGS = [TAG_NAMES.NOSCRIPT, TAG_NAM
 var HELMET_ATTRIBUTE = exports.HELMET_ATTRIBUTE = "data-react-helmet";
 
 /***/ }),
-/* 23 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2760,7 +2772,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = scrollTo;
 
-var _raf = _interopRequireDefault(__webpack_require__(24));
+var _raf = _interopRequireDefault(__webpack_require__(26));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
@@ -2899,13 +2911,13 @@ function scrollTo(element, options) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(2)(module)))
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, exports) {
 
 module.exports = require("raf");
 
 /***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2928,9 +2940,9 @@ var _StaticInfo = __webpack_require__(13);
 
 var _utils = __webpack_require__(10);
 
-var _Location = _interopRequireDefault(__webpack_require__(26));
+var _Location = _interopRequireDefault(__webpack_require__(28));
 
-var _Spinner = _interopRequireDefault(__webpack_require__(17));
+var _Spinner = _interopRequireDefault(__webpack_require__(19));
 
 var _jsxFileName = "/Users/tannerlinsley/GitHub/react-static/packages/react-static/src/browser/components/Routes.js",
     _class,
@@ -3328,7 +3340,7 @@ exports.default = _default2;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(2)(module)))
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3420,7 +3432,7 @@ function init() {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(2)(module)))
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3430,7 +3442,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function(){return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",null,react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1",null,"404 - Oh no's! We couldn't find that page :("));});
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3441,10 +3453,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_static__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_static__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
 /* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_reach_router__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_static__WEBPACK_IMPORTED_MODULE_1__["withRouteData"])(function(props){return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment,null,react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_static__WEBPACK_IMPORTED_MODULE_1__["Head"],null,react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title",null,"Blog - OpenSAGE")),react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1",null,"The OpenSAGE blog"),"All Posts:",react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul",null,props.posts.map(function(post){return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li",{key:post.id},react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_2__["Link"],{to:"/blog/post/".concat(post.id,"/")},post.title," (",post.publishedDate,")"));})));}));
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(15);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(16);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_4__);
+var Post=function Post(_ref){var post=_ref.post;return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li",{key:post.id},react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_2__["Link"],{to:"/blog/post/".concat(post.id,"/")},post.title," (",post.publishedDate,")"));};/* harmony default export */ __webpack_exports__["default"] = (Object(react_static__WEBPACK_IMPORTED_MODULE_1__["withRouteData"])(function(_ref2){var posts=_ref2.posts;var postsByYear=Object(lodash__WEBPACK_IMPORTED_MODULE_4__["groupBy"])(posts,function(post){return moment__WEBPACK_IMPORTED_MODULE_3___default()(post.publishedDate).year();});var years=Object(lodash__WEBPACK_IMPORTED_MODULE_4__["orderBy"])(Object(lodash__WEBPACK_IMPORTED_MODULE_4__["uniq"])(Object.keys(postsByYear))).reverse();return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment,null,react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_static__WEBPACK_IMPORTED_MODULE_1__["Head"],null,react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title",null,"Blog - OpenSAGE")),react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1",null,"The OpenSAGE blog"),years.map(function(year){return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment,{key:year},react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2",{key:year},year),react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul",null,postsByYear[year].map(function(post){return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Post,{key:post.id,post:post});})));}));}));
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3453,14 +3469,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_static__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 /* harmony import */ var react_static__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_static__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(31);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(15);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Post_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(59);
+/* harmony import */ var _Post_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(60);
 /* harmony import */ var _Post_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Post_css__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_static__WEBPACK_IMPORTED_MODULE_1__["withRouteData"])(function(_ref){var post=_ref.post;return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment,null,react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_static__WEBPACK_IMPORTED_MODULE_1__["Head"],null,react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title",null,post.title," - OpenSAGE")),react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1",null,post.title),react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span",null,moment__WEBPACK_IMPORTED_MODULE_2___default()(post.publishedDate).format("DD MMMM YYYY")," by ",post.author),react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"post-content",dangerouslySetInnerHTML:{__html:post.html}}));}));
 
 /***/ }),
-/* 30 */
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3481,21 +3497,15 @@ function _toConsumableArray(arr){return _arrayWithoutHoles(arr)||_iterableToArra
 var pages_Screenshot=function Screenshot(_ref){var file=_ref.file,description=_ref.description;return external_react_default.a.createElement("a",{className:"responsive-image-container",href:"/assets/screenshots/".concat(file),title:description},external_react_default.a.createElement("img",{className:"responsive-image",src:toThumbnailUrl("/assets/screenshots/".concat(file)),alt:description}));};/* harmony default export */ var pages = __webpack_exports__["default"] = (Object(lib["withSiteData"])(function(){return external_react_default.a.createElement(external_react_default.a.Fragment,null,external_react_default.a.createElement(lib["Head"],null,external_react_default.a.createElement("title",null,"OpenSAGE")),external_react_default.a.createElement("p",null,external_react_default.a.createElement("b",null,"OpenSAGE")," is a free, open source re-implementation of SAGE, the 3D real time strategy (RTS) engine used in Command & Conquer\u2122: Generals and other RTS titles from EA Pacific."),external_react_default.a.createElement("p",null,"The engine is written in modern C#, and runs on Windows, macOS and Linux using .NET Core. And a little bit more text like this."),external_react_default.a.createElement(Layout_Row,null,external_react_default.a.createElement(pages_Screenshot,{file:"screenshot-1.jpg",description:"A picture of the Command & Conquer: Generals main menu, running in OpenSAGE."})),external_react_default.a.createElement(Layout_Row,null,external_react_default.a.createElement(pages_Screenshot,{file:"screenshot-1.jpg",description:"An another picture of the main menu."}),external_react_default.a.createElement(pages_Screenshot,{file:"screenshot-1.jpg",description:"The last picture of the main menu."})));}));
 
 /***/ }),
-/* 31 */
-/***/ (function(module, exports) {
-
-module.exports = require("moment");
-
-/***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(33);
-module.exports = __webpack_require__(40);
+__webpack_require__(34);
+module.exports = __webpack_require__(41);
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3509,7 +3519,7 @@ module.exports = __webpack_require__(40);
 /* eslint-disable import/no-dynamic-require */
 
 
-var templates = __webpack_require__(19).default;
+var templates = __webpack_require__(21).default;
 
 var _require = __webpack_require__(8),
     registerTemplates = _require.registerTemplates;
@@ -3518,7 +3528,7 @@ registerTemplates(templates);
 
 if (typeof document !== 'undefined' && module && module.hot) {
   module.hot.accept("/home/travis/build/OpenSAGE/opensage.github.io/dist/react-static-templates.js", function () {
-    registerTemplates(__webpack_require__(19).default);
+    registerTemplates(__webpack_require__(21).default);
   });
 }
 
@@ -3541,7 +3551,7 @@ if (typeof document !== 'undefined' && module && module.hot) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(2)(module)))
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3568,7 +3578,7 @@ var _extends = Object.assign || function (target) {
 
 exports.default = requireUniversalModule;
 
-var _utils = __webpack_require__(15);
+var _utils = __webpack_require__(17);
 
 var CHUNK_NAMES = exports.CHUNK_NAMES = new Set();
 var MODULE_IDS = exports.MODULE_IDS = new Set();
@@ -3751,7 +3761,7 @@ var getConfig = function getConfig(isDynamic, universalConfig, options, props) {
 };
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -3780,10 +3790,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 35;
+webpackContext.id = 36;
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3817,7 +3827,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(16);
+var _propTypes = __webpack_require__(18);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -3892,25 +3902,25 @@ ReportChunks.childContextTypes = {
 exports.default = ReportChunks;
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports) {
 
 module.exports = require("hoist-non-react-statics");
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports) {
 
 module.exports = require("swimmer");
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports) {
 
 module.exports = require("intersection-observer");
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3957,7 +3967,7 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
-var App = __webpack_require__(60).default;
+var App = __webpack_require__(61).default;
 
 var _default = function _default(staticInfo) {
   return function (props) {
@@ -4000,13 +4010,13 @@ exports.default = _default2;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(2)(module)))
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 module.exports = require("normalize.css");
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _typeof = __webpack_require__(3);
@@ -4050,21 +4060,21 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(16);
+var _propTypes = __webpack_require__(18);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactSideEffect = __webpack_require__(43);
+var _reactSideEffect = __webpack_require__(44);
 
 var _reactSideEffect2 = _interopRequireDefault(_reactSideEffect);
 
-var _deepEqual = __webpack_require__(46);
+var _deepEqual = __webpack_require__(47);
 
 var _deepEqual2 = _interopRequireDefault(_deepEqual);
 
-var _HelmetUtils = __webpack_require__(47);
+var _HelmetUtils = __webpack_require__(48);
 
-var _HelmetConstants = __webpack_require__(22);
+var _HelmetConstants = __webpack_require__(24);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
@@ -4350,7 +4360,7 @@ exports.Helmet = HelmetExport;
 exports.default = HelmetExport;
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4366,9 +4376,9 @@ var React = __webpack_require__(0);
 
 var React__default = _interopDefault(React);
 
-var ExecutionEnvironment = _interopDefault(__webpack_require__(44));
+var ExecutionEnvironment = _interopDefault(__webpack_require__(45));
 
-var shallowEqual = _interopDefault(__webpack_require__(45));
+var shallowEqual = _interopDefault(__webpack_require__(46));
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -4498,25 +4508,25 @@ function withSideEffect(reducePropsToState, handleStateChangeOnClient, mapStateO
 module.exports = withSideEffect;
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports) {
 
 module.exports = require("exenv");
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports) {
 
 module.exports = require("shallowequal");
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports) {
 
 module.exports = require("deep-equal");
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _typeof2 = __webpack_require__(3);
@@ -4548,11 +4558,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _objectAssign = __webpack_require__(48);
+var _objectAssign = __webpack_require__(49);
 
 var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
-var _HelmetConstants = __webpack_require__(22);
+var _HelmetConstants = __webpack_require__(24);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
@@ -5067,13 +5077,13 @@ exports.requestAnimationFrame = requestAnimationFrame;
 exports.warn = warn;
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports) {
 
 module.exports = require("object-assign");
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5093,11 +5103,11 @@ var _react = _interopRequireDefault(__webpack_require__(0));
 
 var _ = __webpack_require__(8);
 
-var _Spinner = _interopRequireDefault(__webpack_require__(17));
+var _Spinner = _interopRequireDefault(__webpack_require__(19));
 
 var _StaticInfo = __webpack_require__(13);
 
-var _Routes = __webpack_require__(25);
+var _Routes = __webpack_require__(27);
 
 var _class,
     _temp,
@@ -5436,7 +5446,7 @@ function withRouteData(Comp) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(2)(module)))
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5454,9 +5464,9 @@ var _regenerator = _interopRequireDefault(__webpack_require__(9));
 
 var _react = _interopRequireDefault(__webpack_require__(0));
 
-var _axios = _interopRequireDefault(__webpack_require__(20));
+var _axios = _interopRequireDefault(__webpack_require__(22));
 
-var _Spinner = _interopRequireDefault(__webpack_require__(17));
+var _Spinner = _interopRequireDefault(__webpack_require__(19));
 
 var _StaticInfo = __webpack_require__(13);
 
@@ -5800,7 +5810,7 @@ function withSiteData(Comp) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(2)(module)))
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5821,7 +5831,7 @@ var _utils = __webpack_require__(10);
 
 var _ = __webpack_require__(8);
 
-var _Visibility = _interopRequireDefault(__webpack_require__(21));
+var _Visibility = _interopRequireDefault(__webpack_require__(23));
 
 var _jsxFileName = "/Users/tannerlinsley/GitHub/react-static/packages/react-static/src/browser/components/Prefetch.js";
 
@@ -6150,7 +6160,7 @@ _defineProperty(Prefetch, "defaultProps", {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(2)(module)))
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6171,9 +6181,9 @@ var _ = __webpack_require__(8);
 
 var _utils = __webpack_require__(10);
 
-var _ErrorBoundary = _interopRequireDefault(__webpack_require__(53));
+var _ErrorBoundary = _interopRequireDefault(__webpack_require__(54));
 
-var _HashScroller = _interopRequireDefault(__webpack_require__(54));
+var _HashScroller = _interopRequireDefault(__webpack_require__(55));
 
 var _StaticInfo = __webpack_require__(13);
 
@@ -6545,7 +6555,7 @@ exports.default = _default2;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(2)(module)))
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6833,7 +6843,7 @@ exports.default = ErrorBoundary;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(2)(module)))
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6848,11 +6858,11 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(__webpack_require__(0));
 
-var _raf = _interopRequireDefault(__webpack_require__(24));
+var _raf = _interopRequireDefault(__webpack_require__(26));
 
-var _Location = _interopRequireDefault(__webpack_require__(26));
+var _Location = _interopRequireDefault(__webpack_require__(28));
 
-var _scrollTo = _interopRequireDefault(__webpack_require__(23));
+var _scrollTo = _interopRequireDefault(__webpack_require__(25));
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
@@ -7103,7 +7113,7 @@ exports.default = RouterScroller;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(2)(module)))
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -7113,7 +7123,7 @@ exports.push([module.i, ".navbar {\n  border-bottom: 2px solid black;\n}\n\n.nav
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -7123,7 +7133,7 @@ exports.push([module.i, ".header__logo {\n  height: 100px;\n  min-height: 80px;\
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -7133,17 +7143,17 @@ exports.push([module.i, "footer {\n  background: black;\n  color: white;\n\n  fo
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
 // Module
-exports.push([module.i, "* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  height: 100vh;\n\n  font-family: \"Noto Serif TC\", serif;\n  font-size: 16px;\n  line-height: 1.6;\n}\n\nh1 {\n  margin-top: 2em;\n}\n\nh2 {\n  margin-top: 2em;\n}\n\n#root {\n  height: 100%;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.page {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-positive: 1;\n      flex-grow: 1;\n  max-width: 100%;\n}\n\n#main-content {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-positive: 1;\n      flex-grow: 1;\n  -ms-flex-negative: 0;\n      flex-shrink: 0;\n\n  padding-left: 2em;\n  padding-right: 2em;\n\n  margin-left: auto;\n  margin-right: auto;\n  margin-bottom: 40px;\n\n  max-width: 700px;\n  width: 100%;\n}\n\n/*\nUtility styles: Grids, responsive images and so on.\n*/\n\n.row {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n      flex-direction: row;\n  -ms-flex-negative: 0;\n      flex-shrink: 0;\n}\n\n.row + .row {\n  margin-top: 16px;\n}\n\n.width-50 {\n  max-width: 50%;\n  -ms-flex-negative: 0;\n      flex-shrink: 0;\n}\n\n.responsive-image {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-negative: 1;\n      flex-shrink: 1;\n  max-width: 100%;\n}\n\n.responsive-image + .responsive-image,\n.responsive-image-container + .responsive-image-container {\n  margin-left: 16px;\n}\n", ""]);
+exports.push([module.i, "* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  height: 100vh;\n\n  font-family: \"Noto Serif TC\", serif;\n  font-size: 16px;\n  line-height: 1.6;\n}\n\nh1 {\n  margin-top: 2em;\n}\n\nh2 {\n  margin-top: 1.5em;\n  margin-bottom: 0.5em;\n}\n\n#root {\n  height: 100%;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.page {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-positive: 1;\n      flex-grow: 1;\n  max-width: 100%;\n}\n\n#main-content {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-positive: 1;\n      flex-grow: 1;\n  -ms-flex-negative: 0;\n      flex-shrink: 0;\n\n  padding-left: 2em;\n  padding-right: 2em;\n\n  margin-left: auto;\n  margin-right: auto;\n  margin-bottom: 40px;\n\n  max-width: 700px;\n  width: 100%;\n}\n\n/*\nUtility styles: Grids, responsive images and so on.\n*/\n\n.row {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n      flex-direction: row;\n  -ms-flex-negative: 0;\n      flex-shrink: 0;\n}\n\n.row + .row {\n  margin-top: 16px;\n}\n\n.width-50 {\n  max-width: 50%;\n  -ms-flex-negative: 0;\n      flex-shrink: 0;\n}\n\n.responsive-image {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-negative: 1;\n      flex-shrink: 1;\n  max-width: 100%;\n}\n\n.responsive-image + .responsive-image,\n.responsive-image-container + .responsive-image-container {\n  margin-left: 16px;\n}\n", ""]);
 
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
@@ -7153,7 +7163,7 @@ exports.push([module.i, ".post-content img {\n  max-width: 100%;\n}\n\n.post-con
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7164,11 +7174,11 @@ var external_react_ = __webpack_require__(0);
 var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
 
 // EXTERNAL MODULE: external "react-dom"
-var external_react_dom_ = __webpack_require__(18);
+var external_react_dom_ = __webpack_require__(20);
 var external_react_dom_default = /*#__PURE__*/__webpack_require__.n(external_react_dom_);
 
 // EXTERNAL MODULE: external "normalize.css"
-var external_normalize_css_ = __webpack_require__(41);
+var external_normalize_css_ = __webpack_require__(42);
 
 // EXTERNAL MODULE: ../lib/index.js
 var lib = __webpack_require__(4);
@@ -7177,22 +7187,22 @@ var lib = __webpack_require__(4);
 var router_ = __webpack_require__(7);
 
 // EXTERNAL MODULE: /home/travis/build/OpenSAGE/opensage.github.io/src/components/Nav.css
-var components_Nav = __webpack_require__(55);
+var components_Nav = __webpack_require__(56);
 
 // CONCATENATED MODULE: /home/travis/build/OpenSAGE/opensage.github.io/src/components/Nav.js
 var Nav_Nav=function Nav(_ref){var children=_ref.children;return external_react_default.a.createElement("nav",{className:"navbar"},external_react_default.a.createElement("ol",{className:"navbar__items"},children));};var Nav_LinkNavItem=function LinkNavItem(_ref2){var name=_ref2.name,to=_ref2.to;return external_react_default.a.createElement("li",{className:"nav-item"},external_react_default.a.createElement("a",{href:to},name));};var Nav_RouteNavItem=function RouteNavItem(_ref3){var name=_ref3.name,to=_ref3.to;return external_react_default.a.createElement("li",{className:"nav-item"},external_react_default.a.createElement(router_["Link"],{to:to},name));};
 // EXTERNAL MODULE: /home/travis/build/OpenSAGE/opensage.github.io/src/components/Header.css
-var components_Header = __webpack_require__(56);
+var components_Header = __webpack_require__(57);
 
 // CONCATENATED MODULE: /home/travis/build/OpenSAGE/opensage.github.io/src/components/Header.js
 var Header_Header=function Header(_ref){var children=_ref.children;return external_react_default.a.createElement("header",null,external_react_default.a.createElement(router_["Link"],{to:"/"},external_react_default.a.createElement("div",{className:"header__logo"})),children);};
 // EXTERNAL MODULE: /home/travis/build/OpenSAGE/opensage.github.io/src/components/Footer.css
-var components_Footer = __webpack_require__(57);
+var components_Footer = __webpack_require__(58);
 
 // CONCATENATED MODULE: /home/travis/build/OpenSAGE/opensage.github.io/src/components/Footer.js
 var currentYear=new Date(Date.now()).getFullYear();var Footer_Footer=function Footer(){return external_react_default.a.createElement("footer",null,external_react_default.a.createElement("div",{className:"footer__content"},external_react_default.a.createElement("p",null,"OpenSAGE is an open source project and not associated with Electronic Arts or any other company. All trademarks are property of their respective owners. Screenshots of copyrighted works are only used for demonstration purposes."),external_react_default.a.createElement("p",null,"\xA9 OpenSAGE ",currentYear)));};
 // EXTERNAL MODULE: /home/travis/build/OpenSAGE/opensage.github.io/src/App.css
-var src_App = __webpack_require__(58);
+var src_App = __webpack_require__(59);
 
 // CONCATENATED MODULE: /home/travis/build/OpenSAGE/opensage.github.io/src/App.js
 var App_App=function App(){return external_react_default.a.createElement(lib["Root"],{className:"page"},external_react_default.a.createElement(lib["Head"],null,external_react_default.a.createElement("meta",{name:"viewport",content:"width=device-width, initial-scale=1"}),external_react_default.a.createElement("link",{href:"https://fonts.googleapis.com/css?family=Noto+Serif+TC|Source+Code+Pro",rel:"stylesheet"})),external_react_default.a.createElement(Header_Header,null,external_react_default.a.createElement(Nav_Nav,null,external_react_default.a.createElement(Nav_RouteNavItem,{name:"About",to:"/"}),external_react_default.a.createElement(Nav_RouteNavItem,{name:"Blog",to:"/blog"}),external_react_default.a.createElement(Nav_LinkNavItem,{name:"GitHub",to:"https://github.com/OpenSAGE/OpenSAGE"}),external_react_default.a.createElement(Nav_LinkNavItem,{name:"Discord",to:"https://discord.gg/G2FhZUT"}))),external_react_default.a.createElement("div",{id:"main-content"},external_react_default.a.createElement(lib["Routes"],null)),external_react_default.a.createElement(Footer_Footer,null));};/* harmony default export */ var opensage_github_io_src_App = (App_App);
@@ -7207,4 +7217,4 @@ if(false){}}
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.2d71fec5.js.map
+//# sourceMappingURL=static.d0a623ef.js.map

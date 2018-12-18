@@ -2,5 +2,27 @@
   "editor.formatOnSave": true,
   "[markdown]": {
     "editor.formatOnSave": false
-  }
+  },
+  "json.schemas": [
+    {
+      "fileMatch": ["/posts/**/post.json"],
+      "schema": {
+        "type": "object",
+        "required": ["title", "author", "publishedDate"],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "publishedDate": {
+            "type": "string",
+            "format": "An ISO-8601 date",
+            "pattern": "\\d{4}-\\d{2}-\\d{2}"
+          }
+        }
+      }
+    }
+  ]
 }

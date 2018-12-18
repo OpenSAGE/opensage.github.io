@@ -32,3 +32,11 @@
   color: #333;
   padding: 2px 4px;
 }
+
+.post-metadata span {
+  display: block;
+}
+
+.post-metadata__author {
+  font-weight: bold;
+}

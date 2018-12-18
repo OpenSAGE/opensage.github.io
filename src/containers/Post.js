@@ -10,9 +10,12 @@ export default withRouteData(({ post }) => (
       <title>{post.title} - OpenSAGE</title>
     </Head>
     <h1>{post.title}</h1>
-    <span>
-      {moment(post.publishedDate).format("DD MMMM YYYY")} by {post.author}
-    </span>
+    <div className="post-metadata">
+      <span className="post-metadata__author">{post.author}</span>
+      <span className="post-metadata__date">
+        {moment(post.publishedDate).format("DD MMMM YYYY")}
+      </span>
+    </div>
     <div
       className="post-content"
       dangerouslySetInnerHTML={{ __html: post.html }}

@@ -1,7 +1,5 @@
 
-
-import universal, { setHasBabelPlugin } from '/home/travis/build/OpenSAGE/opensage.github.io/node_modules/react-universal-component/dist/index.js'
-  
+import universal, { setHasBabelPlugin } from '/home/travis/build/OpenSAGE/opensage.github.io/node_modules/react-static/node_modules/react-universal-component/dist/index.js'
 
 
 setHasBabelPlugin()

@@ -1,7 +1,7 @@
 
 *OpenSAGE is an open-source re-implementation of the [SAGE game engine](https://en.wikipedia.org/wiki/SAGE_(game_engine)). SAGE was the game engine used in C&C Generals, C&C Generals Zero Hour, Battle for Middle-earth and its sequels, C&C 3 and its sequel, and Red Alert 3 and its sequel. I've been working on OpenSAGE for 6 months, and made some good progress, so I've started this series of blog posts to talk about what is happening in the project each week. You can also star or watch the [OpenSAGE GitHub repo](https://github.com/OpenSAGE/OpenSAGE) for a more real-time view of things.*
 
-Following on from [last week's post](/blog/archive/2017/12/10/opensage-dev-diary-2-2017-12-10), here is what's been happening this week in [OpenSAGE](https://github.com/OpenSAGE/OpenSAGE).
+Following on from [last week's post](/blog/post/dev_diary_2/), here is what's been happening this week in [OpenSAGE](https://github.com/OpenSAGE/OpenSAGE).
 
 ## Progress this week
 

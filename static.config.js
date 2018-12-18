@@ -29,7 +29,12 @@ const postsRoot = path.join(__dirname, "posts")
 
 function generatePost(id) {
   const postPath = path.join(postsRoot, id)
-  const postConfig = require(path.join(postPath, "post.json"))
+  const postConfig = JSON.parse(
+    readFileSync(path.join(postPath, "post.json"), {
+      encoding: "utf8"
+    })
+  )
+
   const postMarkup = readFileSync(path.join(postPath, "index.md"), {
     encoding: "utf8"
   })
@@ -52,7 +57,7 @@ export default {
   onStart: () => {
     // Watch blog posts for changes
     chokidar
-      .watch("./posts/**/*.md", { ignoreInitial: true })
+      .watch("./posts/**/*", { ignoreInitial: true })
       .on("all", () => reloadRoutes())
   },
   getRoutes: async () => {

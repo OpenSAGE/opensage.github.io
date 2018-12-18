@@ -3473,7 +3473,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Post_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(60);
 /* harmony import */ var _Post_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Post_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_static__WEBPACK_IMPORTED_MODULE_1__["withRouteData"])(function(_ref){var post=_ref.post;return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment,null,react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_static__WEBPACK_IMPORTED_MODULE_1__["Head"],null,react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title",null,post.title," - OpenSAGE")),react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1",null,post.title),react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span",null,moment__WEBPACK_IMPORTED_MODULE_2___default()(post.publishedDate).format("DD MMMM YYYY")," by ",post.author),react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"post-content",dangerouslySetInnerHTML:{__html:post.html}}));}));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_static__WEBPACK_IMPORTED_MODULE_1__["withRouteData"])(function(_ref){var post=_ref.post;return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment,null,react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_static__WEBPACK_IMPORTED_MODULE_1__["Head"],null,react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title",null,post.title," - OpenSAGE")),react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1",null,post.title),react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"post-metadata"},react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span",{className:"post-metadata__author"},post.author),react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span",{className:"post-metadata__date"},moment__WEBPACK_IMPORTED_MODULE_2___default()(post.publishedDate).format("DD MMMM YYYY"))),react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div",{className:"post-content",dangerouslySetInnerHTML:{__html:post.html}}));}));
 
 /***/ }),
 /* 32 */
@@ -7158,7 +7158,7 @@ exports.push([module.i, "* {\n  -webkit-box-sizing: border-box;\n          box-s
 
 exports = module.exports = __webpack_require__(14)(false);
 // Module
-exports.push([module.i, ".post-content img {\n  max-width: 100%;\n}\n\n.post-content h2 > a,\n.post-content h3 > a {\n  text-decoration: none;\n  color: initial;\n}\n\n.post-content p,\n.post-content li {\n  text-align: justify;\n}\n\n.post-content > pre {\n  color: #333;\n  background: #eee;\n  padding: 1em;\n  overflow-x: auto;\n}\n\n.post-content > pre code {\n  font-family: \"Source Code Pro\", \"Menlo\", \"Consolas\", monospace;\n  line-height: 1.2;\n  font-size: 0.8rem;\n}\n\n.post-content p code {\n  font-family: \"Source Code Pro\", \"Menlo\", \"Consolas\", monospace;\n  background: #eee;\n  color: #333;\n  padding: 2px 4px;\n}\n", ""]);
+exports.push([module.i, ".post-content img {\n  max-width: 100%;\n}\n\n.post-content h2 > a,\n.post-content h3 > a {\n  text-decoration: none;\n  color: initial;\n}\n\n.post-content p,\n.post-content li {\n  text-align: justify;\n}\n\n.post-content > pre {\n  color: #333;\n  background: #eee;\n  padding: 1em;\n  overflow-x: auto;\n}\n\n.post-content > pre code {\n  font-family: \"Source Code Pro\", \"Menlo\", \"Consolas\", monospace;\n  line-height: 1.2;\n  font-size: 0.8rem;\n}\n\n.post-content p code {\n  font-family: \"Source Code Pro\", \"Menlo\", \"Consolas\", monospace;\n  background: #eee;\n  color: #333;\n  padding: 2px 4px;\n}\n\n.post-metadata span {\n  display: block;\n}\n\n.post-metadata__author {\n  font-weight: bold;\n}\n", ""]);
 
 
 
@@ -7217,4 +7217,4 @@ if(false){}}
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.d0a623ef.js.map
+//# sourceMappingURL=static.e187dc28.js.map

@@ -13,8 +13,10 @@ const Post = ({ post }) => (
   </li>
 )
 
-export default withRouteData(({ posts }) => {
-  const postsByYear = groupBy(posts, post => moment(post.publishedDate).year())
+export default withRouteData(routeData => {
+  const postsByYear = groupBy(routeData.posts, post =>
+    moment(post.publishedDate).year()
+  )
   const years = orderBy(uniq(Object.keys(postsByYear))).reverse()
   return (
     <>

@@ -664,28 +664,36 @@ function _getRouteInfo() {
         switch (_context2.prev = _context2.next) {
           case 0:
             _ref4 = _args2.length > 1 && _args2[1] !== undefined ? _args2[1] : {}, priority = _ref4.priority;
-            path = (0, _utils.getRoutePath)(path); // Check the cache first
+            path = (0, _utils.getRoutePath)(path); // Check if we should fetch RouteData for this url et all.
 
-            if (!routeInfoByPath[path]) {
+            if ((0, _utils.isPrefetchableRoute)(path)) {
               _context2.next = 4;
-              break;
-            }
-
-            return _context2.abrupt("return", routeInfoByPath[path]);
-
-          case 4:
-            if (!routeErrorByPath[path]) {
-              _context2.next = 6;
               break;
             }
 
             return _context2.abrupt("return");
 
+          case 4:
+            if (!routeInfoByPath[path]) {
+              _context2.next = 6;
+              break;
+            }
+
+            return _context2.abrupt("return", routeInfoByPath[path]);
+
           case 6:
-            _context2.prev = 6;
+            if (!routeErrorByPath[path]) {
+              _context2.next = 8;
+              break;
+            }
+
+            return _context2.abrupt("return");
+
+          case 8:
+            _context2.prev = 8;
 
             if (true) {
-              _context2.next = 16;
+              _context2.next = 18;
               break;
             } // In dev, request from the webpack dev server
 
@@ -694,17 +702,17 @@ function _getRouteInfo() {
               inflightRouteInfo[path] = _axios.default.get("/__react-static__/routeInfo/".concat(path === '/' ? '' : path));
             }
 
-            _context2.next = 11;
+            _context2.next = 13;
             return inflightRouteInfo[path];
 
-          case 11:
+          case 13:
             _ref7 = _context2.sent;
             data = _ref7.data;
             routeInfo = data;
-            _context2.next = 33;
+            _context2.next = 35;
             break;
 
-          case 16:
+          case 18:
             // In production, fetch the JSON file
             // Find the location of the routeInfo.json file
             routeInfoRoot = ( false ? undefined : "/") || false;
@@ -712,21 +720,21 @@ function _getRouteInfo() {
             getPath = "".concat(routeInfoRoot).concat((0, _utils.pathJoin)(path, 'routeInfo.json')).concat(cacheBuster); // If this is a priority call bypass the queue
 
             if (!priority) {
-              _context2.next = 27;
+              _context2.next = 29;
               break;
             }
 
-            _context2.next = 22;
+            _context2.next = 24;
             return _axios.default.get(getPath);
 
-          case 22:
+          case 24:
             _ref8 = _context2.sent;
             _data = _ref8.data;
             routeInfo = _data;
-            _context2.next = 33;
+            _context2.next = 35;
             break;
 
-          case 27:
+          case 29:
             // Otherwise, add it to the queue
             if (!inflightRouteInfo[path]) {
               inflightRouteInfo[path] = requestPool.add(function () {
@@ -734,26 +742,26 @@ function _getRouteInfo() {
               });
             }
 
-            _context2.next = 30;
+            _context2.next = 32;
             return inflightRouteInfo[path];
 
-          case 30:
+          case 32:
             _ref9 = _context2.sent;
             _data2 = _ref9.data;
             routeInfo = _data2;
 
-          case 33:
-            _context2.next = 39;
+          case 35:
+            _context2.next = 41;
             break;
 
-          case 35:
-            _context2.prev = 35;
-            _context2.t0 = _context2["catch"](6); // If there was an error, mark the path as errored
+          case 37:
+            _context2.prev = 37;
+            _context2.t0 = _context2["catch"](8); // If there was an error, mark the path as errored
 
             routeErrorByPath[path] = true;
             return _context2.abrupt("return");
 
-          case 39:
+          case 41:
             if (!priority) {
               delete inflightRouteInfo[path];
             }
@@ -761,12 +769,12 @@ function _getRouteInfo() {
             routeInfoByPath[path] = routeInfo;
             return _context2.abrupt("return", routeInfoByPath[path]);
 
-          case 42:
+          case 44:
           case "end":
             return _context2.stop();
         }
       }
-    }, _callee2, this, [[6, 35]]);
+    }, _callee2, this, [[8, 37]]);
   }));
   return _getRouteInfo.apply(this, arguments);
 }
@@ -1163,6 +1171,7 @@ exports.makeHookReducer = makeHookReducer;
 exports.makeHookMapper = makeHookMapper;
 exports.isSSR = isSSR;
 exports.getBasePath = getBasePath;
+exports.isPrefetchableRoute = isPrefetchableRoute;
 Object.defineProperty(exports, "poolAll", {
   enumerable: true,
   get: function get() {
@@ -1620,6 +1629,41 @@ function getBasePath() {
   return  false ? undefined : "";
 }
 
+function isPrefetchableRoute(path) {
+  // when rendering static pages we dont need this et all
+  if (isSSR()) {
+    return false;
+  } // script links
+  // eslint-disable-next-line
+
+
+  if (path.indexOf('javascript:') === 0) {
+    return false;
+  }
+
+  var self = document.location;
+  var link;
+
+  try {
+    link = new URL(path);
+  } catch (e) {
+    // if a path is not parsable by URL its a local relative path
+    return true;
+  } // if the hostname/port/proto doesnt match its not a route link
+
+
+  if (self.hostname !== link.hostname || self.port !== link.port || self.protocol !== link.protocol) {
+    return false;
+  } // deny all files with extension other than .html
+
+
+  if (link.pathname.includes('.') && !link.pathname.includes('.html')) {
+    return false;
+  }
+
+  return true;
+}
+
 ;
 
 (function () {
@@ -1653,6 +1697,7 @@ function getBasePath() {
   reactHotLoader.register(flattenHooks, "flattenHooks", "/Users/tannerlinsley/GitHub/react-static/packages/react-static/src/browser/utils/index.js");
   reactHotLoader.register(isSSR, "isSSR", "/Users/tannerlinsley/GitHub/react-static/packages/react-static/src/browser/utils/index.js");
   reactHotLoader.register(getBasePath, "getBasePath", "/Users/tannerlinsley/GitHub/react-static/packages/react-static/src/browser/utils/index.js");
+  reactHotLoader.register(isPrefetchableRoute, "isPrefetchableRoute", "/Users/tannerlinsley/GitHub/react-static/packages/react-static/src/browser/utils/index.js");
   leaveModule(module);
 })();
 
@@ -3237,6 +3282,10 @@ function (_Component) {
 
 
         if (!Comp) {
+          if (is404) {
+            throw new Error('This page template could not be found and a 404 template could not be found to fall back on. This means something is terribly wrong and you should probably file an issue!');
+          }
+
           ;
 
           _asyncToGenerator(
@@ -3274,18 +3323,12 @@ function (_Component) {
           } : {}, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 80
+              lineNumber: 85
             },
             __self: this
           })) : null;
         };
       };
-
-      if (children) {
-        return children({
-          getComponentForPath: getComponentForPath
-        });
-      }
 
       var Comp = getComponentForPath(routePath);
       return _react.default.createElement(RoutePathContext.Provider, {
@@ -3295,10 +3338,13 @@ function (_Component) {
           lineNumber: 92
         },
         __self: this
-      }, _react.default.createElement(Comp, {
+      }, children ? children({
+        routePath: routePath,
+        getComponentForPath: getComponentForPath
+      }) : _react.default.createElement(Comp, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 99
         },
         __self: this
       }));
@@ -6703,8 +6749,7 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ErrorBoundary)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      error: false,
-      info: false
+      error: false
     });
 
     return _this;
@@ -6712,26 +6757,21 @@ function (_React$Component) {
 
   _createClass(ErrorBoundary, [{
     key: "componentDidCatch",
-    value: function componentDidCatch(error, info) {
+    value: function componentDidCatch(error) {
       if (typeof document === 'undefined') {
         throw error;
       }
 
       this.setState({
-        error: error,
-        info: info
+        error: error
       });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var error = this.state.error;
 
-      var _this$state = this.state,
-          error = _this$state.error,
-          info = _this$state.info;
-
-      if (this.state.error) {
+      if (error) {
         return _react.default.createElement("div", {
           style: {
             margin: '1rem',
@@ -6740,73 +6780,32 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 20
+            lineNumber: 19
           },
           __self: this
         }, _react.default.createElement("h2", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 27
+            lineNumber: 26
           },
           __self: this
         }, "Oh-no! Something\u2019s gone wrong!"), _react.default.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 28
+            lineNumber: 27
           },
           __self: this
         }), _react.default.createElement("button", {
           size: "s",
           onClick: function onClick() {
-            return _this2.setState({
-              error: false,
-              info: false
-            });
+            return window.location.reload();
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 29
+            lineNumber: 28
           },
           __self: this
-        }, "Reload Component"), _react.default.createElement("br", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 40
-          },
-          __self: this
-        }), _react.default.createElement("pre", {
-          style: {
-            whiteSpace: 'normal',
-            color: 'red'
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 41
-          },
-          __self: this
-        }, _react.default.createElement("code", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 42
-          },
-          __self: this
-        }, error && error.toString())), _react.default.createElement("pre", {
-          style: {
-            color: 'red',
-            overflow: 'auto'
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 44
-          },
-          __self: this
-        }, _react.default.createElement("code", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 45
-          },
-          __self: this
-        }, info.componentStack)));
+        }, "Reload"));
       }
 
       return (0, _utils.unwrapArray)(this.props.children);
@@ -7147,6 +7146,9 @@ exports.push([module.i, "footer {\n  background: black;\n  color: white;\n\n  fo
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)(false);
+// Imports
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Noto+Serif+TC|Source+Code+Pro);", ""]);
+
 // Module
 exports.push([module.i, "* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n\nhtml,\nbody {\n  margin: 0;\n  padding: 0;\n  min-height: 100%;\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n}\n\nbody {\n  font-family: \"Noto Serif TC\", serif;\n  font-size: 16px;\n  line-height: 1.6;\n}\n\nh1 {\n  margin-top: 2em;\n}\n\nh2 {\n  margin-top: 1.5em;\n  margin-bottom: 0.5em;\n}\n\n#root {\n  display: -ms-flexbox;\n  display: flex;\n\n  height: 100%;\n  width: 100%;\n}\n\n.page {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-positive: 1;\n      flex-grow: 1;\n\n  max-width: 100%;\n  width: 100%;\n}\n\n#main-content {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n      flex-direction: column;\n  -ms-flex-positive: 1;\n      flex-grow: 1;\n  -ms-flex-negative: 0;\n      flex-shrink: 0;\n\n  padding-left: 2em;\n  padding-right: 2em;\n\n  margin-left: auto;\n  margin-right: auto;\n  margin-bottom: 40px;\n\n  max-width: 700px;\n  width: 100%;\n}\n\n/*\nUtility styles: Grids, responsive images and so on.\n*/\n\n.row {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n      flex-direction: row;\n  -ms-flex-negative: 0;\n      flex-shrink: 0;\n}\n\n.row + .row {\n  margin-top: 16px;\n}\n\n.width-50 {\n  max-width: 50%;\n  -ms-flex-negative: 0;\n      flex-shrink: 0;\n}\n\n.responsive-image {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-negative: 1;\n      flex-shrink: 1;\n  max-width: 100%;\n}\n\n.responsive-image + .responsive-image,\n.responsive-image-container + .responsive-image-container {\n  margin-left: 16px;\n}\n\n@media screen and (max-width: 450px) {\n  .row {\n    -ms-flex-direction: column;\n        flex-direction: column;\n  }\n\n  .responsive-image {\n    margin-top: 16px;\n    margin-left: 0px;\n  }\n\n  .responsive-image + .responsive-image,\n  .responsive-image-container + .responsive-image-container {\n    margin-left: 0px;\n    margin-top: 16px;\n  }\n}\n", ""]);
 
@@ -7205,7 +7207,7 @@ var currentYear=new Date(Date.now()).getFullYear();var Footer_Footer=function Fo
 var src_App = __webpack_require__(59);
 
 // CONCATENATED MODULE: /home/travis/build/OpenSAGE/opensage.github.io/src/App.js
-var App_App=function App(){return external_react_default.a.createElement(lib["Root"],{className:"page"},external_react_default.a.createElement(lib["Head"],null,external_react_default.a.createElement("meta",{name:"viewport",content:"width=device-width, initial-scale=1"}),external_react_default.a.createElement("link",{href:"https://fonts.googleapis.com/css?family=Noto+Serif+TC|Source+Code+Pro",rel:"stylesheet"})),external_react_default.a.createElement(Header_Header,null,external_react_default.a.createElement(Nav_Nav,null,external_react_default.a.createElement(Nav_RouteNavItem,{name:"About",to:"/"}),external_react_default.a.createElement(Nav_RouteNavItem,{name:"Blog",to:"/blog"}),external_react_default.a.createElement(Nav_LinkNavItem,{name:"GitHub",to:"https://github.com/OpenSAGE/OpenSAGE"}),external_react_default.a.createElement(Nav_LinkNavItem,{name:"Discord",to:"https://discord.gg/G2FhZUT"}))),external_react_default.a.createElement("div",{id:"main-content"},external_react_default.a.createElement(lib["Routes"],null)),external_react_default.a.createElement(Footer_Footer,null));};/* harmony default export */ var opensage_github_io_src_App = (App_App);
+var App_App=function App(){return external_react_default.a.createElement(lib["Root"],{className:"page"},external_react_default.a.createElement(lib["Head"],null,external_react_default.a.createElement("meta",{name:"viewport",content:"width=device-width, initial-scale=1"})),external_react_default.a.createElement(Header_Header,null,external_react_default.a.createElement(Nav_Nav,null,external_react_default.a.createElement(Nav_RouteNavItem,{name:"About",to:"/"}),external_react_default.a.createElement(Nav_RouteNavItem,{name:"Blog",to:"/blog"}),external_react_default.a.createElement(Nav_LinkNavItem,{name:"GitHub",to:"https://github.com/OpenSAGE/OpenSAGE"}),external_react_default.a.createElement(Nav_LinkNavItem,{name:"Discord",to:"https://discord.gg/G2FhZUT"}))),external_react_default.a.createElement("div",{id:"main-content"},external_react_default.a.createElement(lib["Routes"],null)),external_react_default.a.createElement(Footer_Footer,null));};/* harmony default export */ var opensage_github_io_src_App = (App_App);
 // CONCATENATED MODULE: /home/travis/build/OpenSAGE/opensage.github.io/src/index.js
 // Your top level component
 // Export your top level component as JSX (for static rendering)
@@ -7217,4 +7219,4 @@ if(false){}}
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.d0f02d1d.js.map
+//# sourceMappingURL=static.4f119ad3.js.map

@@ -1,0 +1,148 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/component---src-templates-post-js.18647032ad9d756460d0.css">@import url(https://fonts.googleapis.com/css?family=Noto+Serif+TC|Source+Code+Pro);*{box-sizing:border-box}body,html{margin:0;padding:0;min-height:100%;display:flex;width:100%}body{font-family:"Noto Serif TC",serif;font-size:16px;line-height:1.6}h1{margin-top:2em}h2{margin-top:1.5em;margin-bottom:.5em}#___gatsby,#___gatsby>div{display:flex;height:100%;width:100%}.page{max-width:100%}#main-content,.page{display:flex;flex-direction:column;flex-grow:1;width:100%}#main-content{flex-shrink:0;padding-left:2em;padding-right:2em;margin-left:auto;margin-right:auto;margin-bottom:40px;max-width:700px}.row{display:flex;flex-direction:row;flex-shrink:0}.row+.row{margin-top:16px}.width-50{max-width:50%;flex-shrink:0}.responsive-image{display:flex;flex-shrink:1;max-width:100%}.responsive-image+.responsive-image,.responsive-image-container+.responsive-image-container{margin-left:16px}@media screen and (max-width:450px){.row{flex-direction:column}.responsive-image,.responsive-image+.responsive-image,.responsive-image-container+.responsive-image-container{margin-top:16px;margin-left:0}}footer{background:#000;color:#fff;font-size:12px}.footer__content{max-width:900px;margin-left:auto;margin-right:auto;padding:8px}.header__logo{height:100px;min-height:80px;background:url(/opensage-logo.png);background-size:contain;background-position:50%;background-repeat:no-repeat}.navbar{border-bottom:2px solid #000}.navbar__items{margin:0 auto 16px;list-style:none;display:flex;flex-direction:row;justify-content:center}.nav-item{display:inline-flex}.nav-item:not(last-child){margin-right:40px}.nav-item a{color:#000;text-decoration:none}.nav-item a:hover{text-decoration:underline}.post-content img{max-width:100%}.post-content h2>a,.post-content h3>a{text-decoration:none;color:initial}.post-content li,.post-content p{text-align:justify}.post-content>pre{color:#333;background:#eee;padding:1em;overflow-x:auto}.post-content>pre code{line-height:1.2;font-size:.8rem}.post-content>pre code,.post-content code{font-family:Source Code Pro,Menlo,Consolas,monospace}.post-content code{background:#eee;color:#333;padding:2px 4px}.post-metadata span{display:block}.post-metadata__author{font-weight:700}</style><style data-href="/0.24bf1742e3764eb5de3c.css">/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden],template{display:none}</style><meta name="generator" content="Gatsby 2.0.73"/><title data-react-helmet="true">OpenSAGE Dev Diary #2 - OpenSAGE</title><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1"/><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var offset = element.offsetTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link as="script" rel="preload" href="/webpack-runtime-981f6f013481fe59cc22.js"/><link as="script" rel="preload" href="/app-a59aed0f94aff211795a.js"/><link as="script" rel="preload" href="/0-fdb546639c1c10770604.js"/><link as="script" rel="preload" href="/1-d8e8b120a95f8cf248dc.js"/><link as="script" rel="preload" href="/component---src-templates-post-js-4766c8b33af9fb1664ca.js"/><link as="fetch" rel="preload" href="/static/d/723/path---blog-dev-diary-2-78-e-b5f-sKDeUPGuS6kbWZ33W4G6BB5RjIY.json" crossOrigin="use-credentials"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div class="page"><header><a href="/"><div class="header__logo"></div></a><nav class="navbar"><ol class="navbar__items"><li class="nav-item"><a href="/">About</a></li><li class="nav-item"><a href="/blog">Blog</a></li><li class="nav-item"><a href="https://github.com/OpenSAGE/OpenSAGE">GitHub</a></li><li class="nav-item"><a href="https://discord.gg/G2FhZUT">Discord</a></li></ol></nav></header><div id="main-content"><h1>OpenSAGE Dev Diary #2</h1><div class="post-metadata"><span class="post-metadata__author">Tim Jones</span><span class="post-metadata__date">10 December 2017</span></div><div class="post-content"><p><em><a href="http://timjones.io/blog/archive/2017/12/10/opensage-dev-diary-2-2017-12-10">This post</a> was originally published on Tim's blog.</em></p>
+<p>Following on from <a href="/blog/dev-diary-1/">last week's post</a>, here is what's been happening this week in OpenSAGE.</p>
+<h2 id="progress-this-week">Progress this week</h2>
+<p>This week, I have:</p>
+<ul>
+<li>
+<p>Implemented a new build system for shaders. Previously, shaders were compiled (at build time) using the <a href="https://www.nuget.org/packages/Microsoft.HLSL.CSharpVB/">Microsoft.HLSL.CSharpVB MSBuild targets</a> from NuGet. This had a couple of limitations: first, the method this NuGet package used to find <code>fxc.exe</code> <a href="https://github.com/OpenSAGE/OpenSAGE/issues/8">didn't work</a> with recent Windows Kits. Second, vertex and pixel shaders had to be in separate files, which didn't fit well with the runtime Effect system I've been building. The new shader build system uses a custom MSBuild <code>.targets</code> file and a custom C# MSBuild <code>Task</code> to compile all the <code>.fx</code> files found in the OpenSage.Game project, and embed the resulting bytecode as embedded resources. <a href="https://github.com/OpenSAGE/OpenSAGE/tree/master/build">Source code here</a>.</p>
+</li>
+<li>
+<p>Started implementing a GUI renderer. More details on GUI rendering below.</p>
+</li>
+<li>
+<p>Started porting the existing Data Viewer application from WPF to <a href="https://github.com/picoe/Eto">Eto.Forms</a>, a cross-platform UI framework that, like Xamarin Forms, uses native widgets on each platform. I plan to bring OpenSAGE to the Mac soon, and this is an important preparatory step.</p>
+</li>
+</ul>
+<h2 id="gui-rendering">GUI rendering</h2>
+<p>In C&#x26;C Generals, almost all the UI (i.e. everything except for the 3D bits) is defined in <code>.wnd</code> files. This includes the main menu, the options screen, the multiplayer game setup screen, even the command bar at the bottom of the screen during gameplay.</p>
+<p><code>.wnd</code> are plain-text files that look like this:</p>
+<pre><code>FILE_VERSION = 2;
+STARTLAYOUTBLOCK
+  LAYOUTINIT = "[None]";
+  LAYOUTUPDATE = "[None]";
+  LAYOUTSHUTDOWN = "[None]";
+ENDLAYOUTBLOCK
+WINDOW
+  WINDOWTYPE = USER;
+  SCREENRECT = UPPERLEFT: 0 0,
+               BOTTOMRIGHT: 800 600,
+               CREATIONRESOLUTION: 800 600;
+  NAME = "TheName";
+  STATUS = ENABLED+IMAGE;
+  STYLE = USER;
+  SYSTEMCALLBACK = "[None]";
+  INPUTCALLBACK = "[None]";
+  TOOLTIPCALLBACK = "[None]";
+  DRAWCALLBACK = "[None]";
+  FONT = NAME: "Times New Roman", SIZE: 14, BOLD: 0;
+  HEADERTEMPLATE = "[None]";
+  TOOLTIPDELAY = -1;
+  TEXTCOLOR = ENABLED:  255 255 255 255, ENABLEDBORDER:  255 255 255 255,
+              DISABLED: 255 255 255 255, DISABLEDBORDER: 255 255 255 255,
+              HILITE:   255 255 255 255, HILITEBORDER:   255 255 255 255;
+  ENABLEDDRAWDATA = IMAGE: SomeImageName, COLOR: 0 0 128 255, BORDERCOLOR: 254 254 254 255,
+                    ...
+  DISABLEDDRAWDATA = IMAGE: NoImage, COLOR: 64 64 64 255, BORDERCOLOR: 254 254 254 255,
+                     ...
+  HILITEDRAWDATA = IMAGE: NoImage, COLOR: 128 128 255 255, BORDERCOLOR: 254 254 254 255,
+                   ...
+  CHILD
+     ... Child window
+  WINDOW
+  ENDALLCHILDREN
+END
+</code></pre>
+<p>A <code>WINDOW</code> definition (which is really an element of a window) contains information about size, colour, background image.
+There are different window types for textboxes, listboxes, etc. Windows can have child windows, so something like the main menu
+has a large hierarchy of "windows".</p>
+<p>I couldn't find any information about <code>.wnd</code> files by Googling, so I had to figure it out the hard way. For example, you can see above that there are references to images (<code>ENABLEDDRAWDATA = IMAGE: SomeImageName</code>). These don't correspond directly to images on disk. Instead, there is a folder of <code>.ini</code> files called MappedImages, and in there you'll find entries like this:</p>
+<pre><code>MappedImage SomeImageName
+  Texture = TheActualTexture.tga
+  TextureWidth = 1024
+  TextureHeight = 256
+  Coords = Left:0 Top:64 Right:800 Bottom:255
+  Status = NONE
+End
+</code></pre>
+<p>These <code>MappedImage</code> entries contain the actual texture, as well as coordinates within that texture. Most GUI textures contain images for lots of GUI elements, so these coordinates provide the specific rectangle to use for a given GUI element.</p>
+<p>I've implemented a <code>.wnd</code> parser, and started on implementing a GUI renderer. Here's where I've got to this week: the basic bits are in place, but I'm not yet rendering text, and there's no mouse or keyboard input yet.</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/static/ee8bf3553329e228ec8027e8f19f3c6b/1ee56/opensage-2017-12-10-gui.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 600px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 60.416666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAADHUlEQVQoz2WT20/bBRTHf5FoUDpwbLBwsdDWFtaWS+mNlt4vtKWF3oXeVqCsFINMCkNgNZuObc4txodpfDPGP8AHTXSb0UQfLPFVk704nfsHcOFBiePjb8YH0ZOc83AePud8zzdHuH3vDt8+/IavHnxN6XIe01QnI6EOHDEp3owCb1KGP9KDI3QKZ7wDX6Kb5KyW1KKJwoqF/MoYibIJV0bLeNmBcPDogMf7f/IkLq6fxy5rRN/TRNEuY/cVDy+PKdCrnkWnfAbn0HHSdjVnx1/ks6sGPtmx8/lbZu5cN/DukoJE0I1Qv79L/Zc69Yffc7G2QtTWhsHcTjoyxPsLAdbSFmqLATxGKRZzL7mEl1HNMSZsx1CJgweVz6FXNxE0NxCNOBH2ft/jtz/22Dt4RG19maxDynLaSiqoJxPS8+H6DL/ufsqN0hSVpIv5rIfTUoE+aQOSRoGWJoFmMYfE3lzSj8C/4nJti+1ihPtf3OJW2UPRo2ErZ2U1aydh7uFStUQ6ZMQ9KMHQ9zQdrQLS9qfobBMIDkt4fSGNcHh4KKIOeSzWG29eYGfBw4Mv3xZvM89qUMX5lJaiT0HOIWPntUVirmEyTjlWtYQWiSBCG2htEZj191Irz/wD/BsKb2ytUfHLuFSwcqGUoDJpYt7Xz+z4MCGTnHOlGZaSNqKWLgyiUU/ktj0vpripf6CRYtx/FFjbqDKlO0nZ2UncLGPaM0h8rI8zPg1zAS0Jt5bCuJayaFTO1cuZwABnJwYp+ZXMGU9QjPqOArfXXyUqAj/Ky7mSVDLtVpP16MjaFMx6+9mKjXAlM8rVSojlCQ0bWR/VtJ35wAix/uMUIq7/A/OWdm7m1Gynh0iOyojITvCSpplaQE795jL7926zf/ca11M6YnYN4VEVJo2cabuCfNx7FLhZPUfKcJKF8DBeg4KgUU54uJuloJp3sjp++HiTn378jp/vfsB7c6LzNlGFq5+8uH3Y2Mpk0PkfUzar5HXNZK1duDWnCOu7KbiVVEKnWQ2rWPV3sZEYYG2yT/ykLlHBC8RMneSdMuyaFrweG38BWj0HUqlLDTkAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="OpenSAGE GUI - C&C Generals Main Menu"
+        title=""
+        src="/static/ee8bf3553329e228ec8027e8f19f3c6b/7a630/opensage-2017-12-10-gui.png"
+        srcset="/static/ee8bf3553329e228ec8027e8f19f3c6b/46d37/opensage-2017-12-10-gui.png 150w,
+/static/ee8bf3553329e228ec8027e8f19f3c6b/c218a/opensage-2017-12-10-gui.png 300w,
+/static/ee8bf3553329e228ec8027e8f19f3c6b/7a630/opensage-2017-12-10-gui.png 600w,
+/static/ee8bf3553329e228ec8027e8f19f3c6b/91b84/opensage-2017-12-10-gui.png 900w,
+/static/ee8bf3553329e228ec8027e8f19f3c6b/b8f57/opensage-2017-12-10-gui.png 1200w,
+/static/ee8bf3553329e228ec8027e8f19f3c6b/6f30d/opensage-2017-12-10-gui.png 1800w,
+/static/ee8bf3553329e228ec8027e8f19f3c6b/1ee56/opensage-2017-12-10-gui.png 2880w"
+        sizes="(max-width: 600px) 100vw, 600px"
+      />
+  </span>
+  </a></p>
+<p>For reference, here is what the same screen looks like in the original game:</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/static/2f6063d48b347658c53cd0e41c9cad08/ee433/opensage-2017-12-10-gui-original.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 600px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAIAAABr+ngCAAAACXBIWXMAABYlAAAWJQFJUiTwAAADVElEQVQozw3QWW/aBgAAYD80IsUYCDghBHM4YOMLDLbxbYwbE8xliDkChcJI2iZpQ5KhNtm0Q5qqSpMmrVuladNe9jO2l0mTJu13rW/f8wdUUFA/9DtE0CGhJgXNxcgzIdQqQKd8ZCKG53JkIYYWtdTdqXo3NW6nTx5W9u20+sKtjKooYOSgoRztiNEXJ6nzbsYWdlwd6ZvIdQdrKLvrAfHSpVcu8s8v/J8/1/77Tfz3V/Xvj9JfP/L3ExRolXa/mhaXx/kjOTFv0Y6CLo65mxPlfqyMa5Rbxft24bR++PUqtWwfvu6jF2760ku/O4vfuHHgRNlfOkmdgflcVMh/AnreZDeetmwW1x5/3ywuDHJe56oFhEqBei6sZiEM8SkE2CzDQJOHxzVEoiMDg+ip5IBHByZ93S2fNYjzvvy6bww1ZlFnLRYWMLBKhHQcxJKPLAG6cbNAOe1XmHBdThkc4lnE4ohtSeRTE5/q6LLFr1z1szp93WZaQoxJP5bwoIJBmfiWSD+eGfuAmAMbcryjUiqTOZLRkUmcNbiZXbxqUuMa+83VaO1V5i28xkWIlN8kQlUcQuNbPOF79gQBDCrQ4NMlOlpidmw1+e1Kf/vUXHTVVwPlVU+8HuqujllqXC1E0AOfjkMGFsCQbSb7aKjFgA637yoJmglIlaijE5uJ9MdGc7jkyKJbCuGodJGESyxUwsP5tM8uwJ1STGf2tGJAp8BPYfELr6ypezqfqLLZ24n5/VXjrMWbXL6t0GUyhpPbJAnSJKRJkbaZuPXkNwN1aCXtUhAo5rbGTXzilMZ2edIQv3vZe3/lvbvomTy2HhuGmCCobZoGNTmsCbuqEO5quYnFPXfISycLMLktt55YtMSPd97vD5Mf1t6Hu9H7y/6buf1w7tSUWLEIsoVgVYINKSrxQddEl23x7UiY6GnAKu24xxHnCDm2kiOHGNrUw9L6clH76XPvi+cNmgwVCpDMw0IBrrCwYUScasoy8ZlD92UU8GRsM8QXXcRSwgYfFjlQKIFKJVDX4UHjkCUhjgKFQrDM+HUxrCtQXdtz9fxmVp7ZGNCVclMd9yS0V8l4YqbHH/SFvZ4Ad7iddjlcZyCTAquMX8S32YyPzfpkAjLpA4dPDczc/2XgzoV64piFAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="C&C Generals Main Menu"
+        title=""
+        src="/static/2f6063d48b347658c53cd0e41c9cad08/7a630/opensage-2017-12-10-gui-original.png"
+        srcset="/static/2f6063d48b347658c53cd0e41c9cad08/46d37/opensage-2017-12-10-gui-original.png 150w,
+/static/2f6063d48b347658c53cd0e41c9cad08/c218a/opensage-2017-12-10-gui-original.png 300w,
+/static/2f6063d48b347658c53cd0e41c9cad08/7a630/opensage-2017-12-10-gui-original.png 600w,
+/static/2f6063d48b347658c53cd0e41c9cad08/ee433/opensage-2017-12-10-gui-original.png 800w"
+        sizes="(max-width: 600px) 100vw, 600px"
+      />
+  </span>
+  </a></p>
+<p>Still plenty of work to do, but it's a start.</p>
+<h2 id="next-week">Next week</h2>
+<p>Next, I'm planning to finish porting the Data Viewer application to Eto.Forms, and then keep going with GUI rendering.</p>
+<p>See you next time!</p></div></div><footer><div class="footer__content"><p>OpenSAGE is an open source project and not associated with Electronic Arts or any other company. All trademarks are property of their respective owners. Screenshots of copyrighted works are only used for demonstration purposes.</p><p>© OpenSAGE <!-- -->2018</p></div></footer></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-post-js","jsonName":"blog-dev-diary-2-78e","path":"/blog/dev-diary-2"};window.dataPath="723/path---blog-dev-diary-2-78-e-b5f-sKDeUPGuS6kbWZ33W4G6BB5RjIY";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-a59aed0f94aff211795a.js"],"component---src-templates-post-js":["/component---src-templates-post-js.18647032ad9d756460d0.css","/component---src-templates-post-js-4766c8b33af9fb1664ca.js"],"component---src-pages-404-js":["/component---src-pages-404-js-7f310243cc7626c49131.js"],"component---src-pages-blog-js":["/component---src-pages-blog-js.da8e6e846b6d400a4985.css","/component---src-pages-blog-js-137500fdf0b4bfff2e59.js"],"component---src-pages-index-js":["/component---src-pages-index-js.da8e6e846b6d400a4985.css","/component---src-pages-index-js-ee9a0e788f0505c4fc01.js"]};/*]]>*/</script><script src="/component---src-templates-post-js-4766c8b33af9fb1664ca.js" async=""></script><script src="/1-d8e8b120a95f8cf248dc.js" async=""></script><script src="/0-fdb546639c1c10770604.js" async=""></script><script src="/app-a59aed0f94aff211795a.js" async=""></script><script src="/webpack-runtime-981f6f013481fe59cc22.js" async=""></script></body></html>

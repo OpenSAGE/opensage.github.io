@@ -5,6 +5,8 @@ author: "Tim Jones"
 date: 2018-03-06
 ---
 
+_[This post](http://timjones.io/blog/archive/2018/03/06/parsing-command-and-conquer-generals-replay-files) was originally published on Tim's blog._
+
 **TL/DR: In this post we'll examine C&C Generals replay (.rep) files in detail, figure out how they work, and then look at a very early implementation of a replay viewer that I've added to [OpenSAGE](https://github.com/OpenSAGE/OpenSAGE).**
 
 Have you ever saved a replay from [insert your favourite video game here], and wondered exactly what the replay file contains? I don't know how many people will answer "yes" to that question, but I'm one of them. For efficiency and IP-protection reasons, replay files are usually stored in a binary format, so if you open one of them in Notepad, all you'll see are a bunch of garbled characters. It's often a long road from there, to fully understanding and being able to parse one of these files.

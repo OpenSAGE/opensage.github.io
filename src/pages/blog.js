@@ -5,7 +5,7 @@ import { Link, graphql } from "gatsby"
 
 import { Layout } from "../Layout"
 
-const Post = ({ post }) => (
+export const Post = ({ post }) => (
   <li>
     <Link to={`/blog/${post.slug}/`}>
       {post.title} ({moment(post.date).format("YYYY-MM-DD")})

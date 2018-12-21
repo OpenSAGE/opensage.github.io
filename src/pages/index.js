@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import { Layout } from "../Layout"
 import { Row } from "../components/Layout"
+import { Post } from "./blog"
 
 const Screenshot = ({
   img: {
@@ -25,14 +26,28 @@ const Screenshot = ({
   </a>
 )
 
+const DevelopmentUpdates = ({ posts: { edges } }) =>
+  edges.length === 0 ? null : (
+    <section style={{ marginTop: "1em", marginBottom: "2em" }}>
+      <strong>Latest development updates</strong>
+      <ul>
+        {edges.map(({ node: { frontmatter } }) => (
+          <Post key={frontmatter.slug} post={frontmatter} />
+        ))}
+      </ul>
+    </section>
+  )
+
 export default ({ data }) => (
-  <Layout title="OpenSAGE">
+  <Layout>
     <>
       <p>
         <b>OpenSAGE</b> is a free, open source re-implementation of SAGE, the 3D
-        real time strategy (RTS) engine used in Command & Conquer™: Generals and
-        other RTS titles from EA Pacific.
+        real-time strategy engine used in Command & Conquer™: Generals and other
+        RTS titles from EA Pacific.
       </p>
+
+      <DevelopmentUpdates posts={data.latestPosts} />
 
       <Row>
         <Screenshot
@@ -57,8 +72,20 @@ export default ({ data }) => (
       </Row>
 
       <p>
-        The engine is written in modern C#, and runs on Windows, macOS and Linux
-        using .NET Core. And a little bit more text like this.
+        The engine is under active development by a small group of volunteers.
+        While the engine doesn't yet implement much of proper gameplay for any
+        of the supported games, it can already load most types of assets from
+        the first few SAGE titles, load into maps and display user interfaces.
+      </p>
+
+      <p>
+        The engine is written in modern C# and runs on Windows, macOS and Linux
+        using <a href="https://github.com/dotnet/core">.NET Core</a>. We use{" "}
+        <a href="https://mellinoe.github.io/veldrid-docs/index.html">Veldrid</a>{" "}
+        in order to support a variety of graphics APIs (including Direct3D 11,
+        OpenGL and Metal) with a single codebase. The source code is available
+        on <a href="https://github.com/OpenSAGE/OpenSAGE">GitHub</a> under the
+        LGPLv3 license.
       </p>
     </>
   </Layout>
@@ -92,6 +119,20 @@ export const query = graphql`
     }
     viewer3: file(relativePath: { eq: "viewer-3.png" }) {
       ...screenshotImage
+    }
+    latestPosts: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 3
+    ) {
+      edges {
+        node {
+          frontmatter {
+            slug
+            title
+            date
+          }
+        }
+      }
     }
   }
 `

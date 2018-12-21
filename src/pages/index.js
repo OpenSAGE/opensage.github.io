@@ -121,7 +121,7 @@ export const query = graphql`
       ...screenshotImage
     }
     latestPosts: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { order: DESC, fields: [frontmatter___date, frontmatter___slug] }
       limit: 3
     ) {
       edges {

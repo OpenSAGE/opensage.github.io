@@ -37,7 +37,9 @@ export default ({ data }) => {
 
 export const query = graphql`
   query BlogPosts {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date, frontmatter___slug] }
+    ) {
       edges {
         node {
           frontmatter {

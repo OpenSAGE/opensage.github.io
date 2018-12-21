@@ -31,3 +31,18 @@
 .nav-item a:hover {
   text-decoration: underline;
 }
+
+@media screen and (max-width: 350px) {
+  .navbar__items {
+    flex-direction: column;
+  }
+
+  .nav-item {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .nav-item:not(last-child) {
+    margin-bottom: 8px;
+  }
+}

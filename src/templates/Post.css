@@ -13,14 +13,20 @@
   text-align: justify;
 }
 
-.post-content > pre {
+.post-content blockquote {
+  border-left: solid lightgray 4px;
+  padding-left: 1em;
+  margin-left: 0;
+}
+
+.post-content pre {
   color: #333;
   background: #eee;
   padding: 1em;
   overflow-x: auto;
 }
 
-.post-content > pre code {
+.post-content pre code {
   font-family: "Source Code Pro", "Menlo", "Consolas", monospace;
   line-height: 1.2;
   font-size: 0.8rem;
@@ -54,4 +60,29 @@
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.post-content .table-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid #bdc1c4;
+}
+
+.post-content table {
+  border-collapse: collapse;
+}
+
+.post-content table th {
+  background-color: rgb(240, 240, 240);
+  padding-left: 1em;
+  padding-right: 1em;
+  width: auto;
+}
+
+.post-content table td,
+.post-content table th {
+  border-bottom: 1px solid #bdc1c4;
+  border-right: 1px solid #ccc;
+  padding: 0.5rem;
+  white-space: nowrap;
 }

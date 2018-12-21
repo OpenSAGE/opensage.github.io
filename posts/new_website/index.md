@@ -1,3 +1,10 @@
+---
+slug: "new-website"
+title: "We have a new website!"
+author: "Paavo Huhtala"
+date: 2018-12-21
+---
+
 As you've probably noticed from reading this, we now have a website. The goal is to gather information about the project in a more end user friendly format & style than the [GitHub page](https://github.com/OpenSAGE/OpenSAGE), and to have a place where we can publish (hopefully!) regular development updates about the project. Previous blog posts about OpenSAGE were published on [Tim's blog](http://timjones.io/), and they have been imported to this blog too - you can find them from [the archive](/blog).
 
 This website came to be when we decided we want to do a "A year in review" -style blog post about the things we've built this past year. I voluntereed to write that post, but I couldn't decide where I'd want to publish it. One thing lead to another, and as a typical example of yak shaving I ultimately ended up creating a new website for the entire project (and that blog post LINK HERE).

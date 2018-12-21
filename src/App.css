@@ -28,7 +28,8 @@ h2 {
   margin-bottom: 0.5em;
 }
 
-#root {
+#___gatsby,
+#___gatsby > div {
   display: flex;
 
   height: 100%;

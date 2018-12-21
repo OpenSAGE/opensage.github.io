@@ -1,6 +1,13 @@
+---
+slug: "dev-diary-2"
+title: "OpenSAGE Dev Diary #2"
+author: "Tim Jones"
+date: 2017-12-10
+---
+
 _[This post](http://timjones.io/blog/archive/2017/12/10/opensage-dev-diary-2-2017-12-10) was originally published on Tim's blog._
 
-Following on from [last week's post](/blog/post/dev_diary_1/), here is what's been happening this week in OpenSAGE.
+Following on from [last week's post](/blog/dev-diary-1/), here is what's been happening this week in OpenSAGE.
 
 ## Progress this week
 
@@ -76,11 +83,11 @@ These `MappedImage` entries contain the actual texture, as well as coordinates w
 
 I've implemented a `.wnd` parser, and started on implementing a GUI renderer. Here's where I've got to this week: the basic bits are in place, but I'm not yet rendering text, and there's no mouse or keyboard input yet.
 
-![OpenSAGE GUI - C&C Generals Main Menu](/assets/posts/dev_diary_2/opensage-2017-12-10-gui.png)
+![OpenSAGE GUI - C&C Generals Main Menu](./opensage-2017-12-10-gui.png)
 
 For reference, here is what the same screen looks like in the original game:
 
-![C&C Generals Main Menu](/assets/posts/dev_diary_2/opensage-2017-12-10-gui-original.png)
+![C&C Generals Main Menu](./opensage-2017-12-10-gui-original.png)
 
 Still plenty of work to do, but it's a start.
 

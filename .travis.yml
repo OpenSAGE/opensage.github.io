@@ -9,7 +9,7 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   keep-history: true
-  local-dir: dist
+  local-dir: public
   script: yarn build
   target-branch: master
   on:

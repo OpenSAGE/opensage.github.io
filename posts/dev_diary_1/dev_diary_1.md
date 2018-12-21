@@ -1,3 +1,10 @@
+---
+slug: "dev-diary-1"
+title: "OpenSAGE Dev Diary #1"
+author: "Tim Jones"
+date: 2017-12-03
+---
+
 _[This post](http://timjones.io/blog/archive/2017/12/03/opensage-dev-diary-2017-12-03) was originally published on Tim's blog._
 
 This is the first in what I hope will be a continuing series of updates on [OpenSAGE](https://github.com/OpenSAGE/OpenSAGE), my C&C Generals re-implementation project.
@@ -6,7 +13,7 @@ I've been working on OpenSAGE for about 6 months now. I'm still working on parsi
 
 Here is what the data viewer looks like. Here I'm viewing the USA Command Center 3D model:
 
-![OpenSAGE Data Viewer](/assets/posts/dev_diary_1/opensage-2017-12-03-data-viewer.png)
+![OpenSAGE Data Viewer](./opensage-2017-12-03-data-viewer.png)
 
 I meant to start writing about this project soon after I started it, but clearly that didn't happen. Instead of trying to list everything I've done in the last 6 months, I'll just start from a week ago, and then try to keep up-to-date from now.
 
@@ -28,4 +35,4 @@ Next week I plan to work on the GUI. I have a prototype GUI renderer, built on W
 
 Although I haven't done any work on maps this week, allow me to finish with a screenshot showing the current state of map rendering:
 
-![OpenSAGE Data Viewer - USA03 Map](/assets/posts/dev_diary_1/opensage-2017-12-03-data-viewer-map-usa03.png)
+![OpenSAGE Data Viewer - USA03 Map](./opensage-2017-12-03-data-viewer-map-usa03.png)

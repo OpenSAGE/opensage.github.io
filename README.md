@@ -2,29 +2,33 @@
 
 [![Build Status](https://travis-ci.org/OpenSAGE/opensage.github.io.svg?branch=master)](https://travis-ci.org/OpenSAGE/opensage.github.io)
 
-This is the website of the OpenSAGE project, based on `react-static`.
+This is the website of the OpenSAGE project, based on [`gatsby`](https://www.gatsbyjs.org/).
 
 Requires recent versions of both Node.js and `yarn` to build.
 
 ## How to develop
 
 1. Run `yarn` to install required packages.
-2. Run `yarn thumbs` to generate thumbnail images.
-3. Run `yarn start` to start the site in development mode. The server should start in http://localhost:3000, with automatic hot reload enabled.
-4. Run `yarn build` to produce a static site, which will be placed in the `dist` folder.
+3. Run `yarn develop` to start the site in development mode. The server should start in http://localhost:8000, with automatic hot reload enabled.
+4. Run `yarn build` to generate a static site, which will be placed in `/public`. You can preview the generated site with `yarn serve` after building - the server should start in http://localhost:9000.
 5. The master branch is automatically deployed by Travis-CI.
 
 The project uses Prettier for automatic source code formatting. You can install it with `yarn global add prettier` and then run it using `yarn prettier`, or easily from VS Code with the [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
 
 ## Authoring a blog post
 
-1. Create a new folder under `/posts`. The name of the folder will serve as the unique id of your post.
-2. Create two new files, `index.md` (the blog post in Markdown format) and `post.json` (metadata).
-   - See pre-existing blog posts for the data format.
-3. Write the blog post. If you're running the website in development mode, the blog post will hot reload as you save.
-4. Add images under `/public/assets/posts/$your_post_id/`.
-   - This is just a convention; you can re-use images if you really want to.
-   - Run `yarn thumbs` to generate thumbnails. This is just so that you can previews images locally; the thumbnails should not be commited to the repository as they will be regenerated as a part of the deployment process.
+Blog posts should be placed in `/posts`. You can create a subfolder for your post if you want to (good idea if you want to include images), but single Markdown files work as well. If you're running the site in development mode, the site should reload every time you save a markdown file.
+
+A post should start with a "front matter"; a little metadata section which is parsed by the site. It should look something like this:
+
+```
+---
+slug: "unique-id-for-the-post-in-kebab-case"
+title: "Top 10 ways to parse object INIs - you didn't see #5 coming!"
+author: "Your name here"
+date: 2025-12-24
+---
+```
 
 ### Tips
 

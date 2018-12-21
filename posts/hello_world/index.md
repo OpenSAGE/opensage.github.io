@@ -1,5 +1,0 @@
-Hello!
-
-## Neat-o
-
-Hello!

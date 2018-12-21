@@ -1,18 +1,20 @@
 import "normalize.css"
-
-import React from "react"
-import { Root, Routes, Head } from "react-static"
-import { Nav, RouteNavItem, LinkNavItem } from "./components/Nav"
-import { Header } from "./components/Header"
-import { Footer } from "./components/Footer"
-
 import "./App.css"
 
-const App = () => (
-  <Root className="page">
-    <Head>
+import React from "react"
+
+import { Helmet } from "react-helmet"
+
+import { Footer } from "./components/Footer"
+import { Header } from "./components/Header"
+import { Nav, LinkNavItem, RouteNavItem } from "./components/Nav"
+
+export const Layout = ({ children, title }) => (
+  <div className="page">
+    <Helmet>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </Head>
+      <title>{title || "OpenSAGE"}</title>
+    </Helmet>
     <Header>
       <Nav>
         <RouteNavItem name="About" to="/" />
@@ -21,11 +23,7 @@ const App = () => (
         <LinkNavItem name="Discord" to="https://discord.gg/G2FhZUT" />
       </Nav>
     </Header>
-    <div id="main-content">
-      <Routes />
-    </div>
+    <div id="main-content">{children}</div>
     <Footer />
-  </Root>
+  </div>
 )
-
-export default App

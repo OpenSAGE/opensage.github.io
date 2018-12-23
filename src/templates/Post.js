@@ -6,6 +6,10 @@ import { Layout } from "../Layout"
 import "./Post.css"
 
 export default ({ data }) => {
+  if (data == null || data.markdownRemark == null) {
+    return <Layout />
+  }
+
   const post = data.markdownRemark
   const { date, title, author } = post.frontmatter
 

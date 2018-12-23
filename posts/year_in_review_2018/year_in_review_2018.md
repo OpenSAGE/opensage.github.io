@@ -19,7 +19,7 @@ Here's the commit graph for the main repository from December 2017 to December 2
 The first few months of the year were some of the most productive in the project's history, and active development continued throughout spring.
 After a slow summer and a quiet autumn the development pace has picked up again, and we've reached last year's activity peak again.
 
-## What've done this year
+## What have we done this year
 
 We are not going to go through every change that happened during the year, as there's way too much to cover, but I tried to pick the most important ones.
 I recommend preparing by making a cup of a seasonally appropriate beverage of your choosing before continuing. It's going to be a long one.
@@ -60,7 +60,7 @@ In early February on the 15th anniversary of C&C Generals we had our [first ever
 
 ### March
 
-In March Tim finished the shader porting work that begun in January, and as a result was able to retarget the engine to use .NET Core instead of the Windows-only .NET Framework (as we no longer required the DirectX Shader Compiler). These changes meant that OpenSAGE was finally able to run on all platforms Veldrid supports, at least in theory. He also added a prototype version of the in-game control bar; the bit of UI that covers the bottom of the screen. I was mostly busy with coursework at this point, but I managed to add the `Player` class, which as the name implies is the runtime representation of a player.
+In March Tim finished the shader porting work that begun in January, and as a result was able to retarget the engine to use .NET Core instead of the Windows-only .NET Framework (as we no longer required the DirectX Shader Compiler). These changes meant that OpenSAGE was finally able to run on all platforms Veldrid supports, at least in theory. He also added a prototype version of the in-game control bar (the bit of UI that covers the bottom of the screen). I was mostly busy with coursework at this point, but I managed to add the `Player` class, which as the name implies is the runtime representation of a player.
 
 ![Somewhat broken control bar](./control_bar_1.png)
 
@@ -85,7 +85,7 @@ Oh, and Tim also started working on road loading & rendering.
 
 ![First prototype of road rendering in OpenSAGE](./roads_1.png)
 
-Stephan tweaked our [AppVeyor](https://www.appveyor.com/)-based CI pipeline, and added code coverage analysis using [Codecov](https://codecov.io/).
+Stephan tweaked our [AppVeyor](https://www.appveyor.com/)-based CI pipeline, and added code coverage analysis using [Codecov](https://codecov.io/). He also spent time contributing to both Veldrid and ShaderGen in order to fix some of the remaining issues blocking us from supporting OpenGL (and therefore Linux).
 
 I worked on a bunch smaller features during April. I started by implementing a `Team` class to accompany `Player`, and implemented parsing for both from map data. Then I implemented the first actual game mechanic of the project: a prototype of the unit selection system, including single and multi ("box") selection. Here's what the first version looked like:
 
@@ -103,4 +103,53 @@ In order to make camera movement, selection and the UI all work together, I had 
 
 However, the issue was that the event handling order was fixed, which isn't always the case. For instance: the UI input handler should normally be the first system to handle mouse events. This makes sense, as clicking a button in the navbar should call the button's click handler instead of selecting a unit hidden behind the UI. However, when panning or rotating the camera (or making a box selection) the UI should ignore your mouse events. This was handled by building special cases to input handlers, which meant that the different input handlers were tightly coupled and full of hacks.
 
-The solution was rather simple: somewhat inspired by operating system [interrupt handlers](https://en.wikipedia.org/wiki/Interrupt_handler) I assigned each handler a priority value, which they can change at will if need be. Priority values are just entries in an enum, so the handling order is easy to understand at a glance and trivial to rearrange at will. In practise this meant that, for example, the selection system can increase its priority to be higher than the UI system's when the user is making a box selection. Input handlers are iterated in their priority order each frame, and messages are handled like before.
+The solution was rather simple: somewhat inspired by operating system [interrupt handlers](https://en.wikipedia.org/wiki/Interrupt_handler) I assigned each handler a priority value, which it can change if need be. Priority values are just entries in an enum, so the handling order is easy to understand at a glance and trivial to rearrange at will. In practise this meant that, for example, the selection system can increase its priority to be higher than the UI system's when the user is making a box selection. Input handlers are iterated in their priority order each frame, and messages are handled like before.
+
+### May
+
+In May Stephan made a ton of fixes to rendering and shader generation, both to our dependencies and OpenSAGE itself. As the result by the middle of the month he had the engine running on Ubuntu. He also got Vulkan working well enough to render the ImGui parts of the data viewer. 
+
+![OpenSAGE running on Ubuntu](./ubuntu.png)
+
+### June, July and August
+
+The scorching hot summer was rather quiet from the project's point of view, but we still had a steady stream of bug fixes throughout the months. Stephan continued working on audio support and made some optimizations to UI.
+
+We had two new contributors:
+
+* [Markus Hiller](https://github.com/MarkusHiller) made a lot of improvements to the Skirmish menu and the WND implementation, and he implemented installation language detection heuristics for macOS and Linux. He also contributed two more PRs: a feature that colours certain parts of units and buildings depening on their faction (internally known as "house colours") and did some preparatory work for pathfinding.
+
+* [hashkitten](https://github.com/hashkitten) implemented support for DVI ADPCM encoded WAV files, and made a rendering tweak to remedy [Z-fighting](https://en.wikipedia.org/wiki/Z-fighting) issues.
+
+On June 23rd we had our [second release](https://github.com/OpenSAGE/OpenSAGE/releases/tag/v0.2.0), which contained everything that we had done after early February (so quite a lot). Most notably, this was the first release with macOS and Linux support.
+
+### October
+
+Nothing of note happened in September, but in October development pace picked up again a bit. Tim merged the roads branch he had started in April, because slightly wrong roads look better than no roads at all. I contributed with Stephan on some INI parsing improvements. We upgraded some libraries, fixed some bugs and replaced our command line parser library.
+
+On the last week of the month we had our [third and latest release](https://github.com/OpenSAGE/OpenSAGE/releases/tag/v0.3.0).
+
+### November
+
+After almost half a year of slower development, November saw a record high number of commits – over 150 of them – and two brand new contributors.
+
+Tim rewrote the shaders again, this time from ShaderGen's C# to GLSL. While ShaderGen had initially worked quite well for us, it was still more limited than proper well-established shading languages. Because we were practically (as far as I know) the only "production" users of the library, every new graphics-related feature usually involved implementing or fixing something in ShaderGen, for multiple different shading language backends. The new approach is to compile GLSL via SPIR-V bytecode into platform-specific shading languages using [SPIRV-Cross](https://github.com/KhronosGroup/SPIRV-Cross) with the official [Veldrid extension](https://github.com/mellinoe/veldrid-spirv). This should hopefully mean that we're able to spend more time coding a game engine rather than a shader compiler.
+
+Using the amazing new powers of GLSL, Tim was able to continue a graphics feature that was actually prototyped back in April: cascaded shadow maps. The original SAGE used a different shadow rendering technique known as [shadow volumes](https://en.wikipedia.org/wiki/Shadow_volume) (perhaps most famously used in Doom 3), but we ended up choosing shadow mapping instead. Shadow mapping is generally speaking better suited for modern hardware and APIs, supports transparency, softening and looks (subjectively) better.
+
+![An early screenshot of cascaded shadow mapping](./shadows_1.png)
+
+Tim also implemented model parsing for W3X models used in C&C 3 and later games, and fixed terrain texture blending in Battle for Middle Earth — a graphical glitch that had existed for about a year.
+
+Stephan worked on adaptive delta animation decoding. Adaptive delta is an animation compression technique first used in Battle for Middle Earth II. With help from the Discord community he was able to implement the proper algorithm and the lookup table. He also ported our audio system to use his [SharpAudio](https://github.com/feliwir/SharpAudio/) library instead of OpenAL-CS.
+
+I implemented the basics of the "subsystems" feature. In SAGE subsystems are parts of the engine responsible for specific tasks like multiplayer or UI rendering. They require specific configuration to be loaded before they can be used, which is defined in game data for BFME1 and later games. Until now we had code sprinkled all around the codebase that loads configuration files using hardcoded file names, usually with a switch statement to choose the right files based on the currently loaded game. With subsystems we can load all the necessary configuration with a single function call in a game-indepedent fashion. There are still plenty of hardcoded file names where there shouldn't be, but it's a start. I also added some quality of life features to the data viewer, including a text view for text-based assets.
+
+We had two new contributors in November:
+
+* [Michael Schnabel](https://github.com/Tarcontar), a long time follower of the project decided to tackle a huge task as his first code contribution: Battle for Middle Earth INI parsing. SAGE has a lot of configuration, and BFME added a bunch more. As the result of his countless hours of work we can now parse every INI file in BFME!
+
+* [Jana Mohn](https://github.com/Qibbi), an another familiar user from Discord contributed her first patch, which optimized some of our math code, added a way to disable vsync in the data viewer and added an integrated FPS counter.
+
+
+

@@ -2,6 +2,12 @@
   max-width: 100%;
 }
 
+.post-content .gatsby-resp-image-wrapper,
+.post-content .video-responsive {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
 .post-content h2 > a,
 .post-content h3 > a {
   text-decoration: none;
@@ -11,6 +17,7 @@
 .post-content p,
 .post-content li {
   text-align: justify;
+  word-spacing: -1px;
 }
 
 .post-content blockquote {

@@ -2,7 +2,7 @@
 slug: "replay-file-parsing"
 title: "Parsing Command & Conquer: Generals replay files"
 author: "Tim Jones"
-date: 2018-03-06
+date: "2018-03-06"
 ---
 
 _[This post](http://timjones.io/blog/archive/2018/03/06/parsing-command-and-conquer-generals-replay-files) was originally published on Tim's blog._

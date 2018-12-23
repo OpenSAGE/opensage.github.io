@@ -2,7 +2,7 @@
 slug: "year-in-review-2018"
 title: "Year in Review 2018"
 author: "Paavo Huhtala"
-date: 2018-12-22
+date: "2018-12-22"
 ---
 
 _OpenSAGE is an open source re-implementation of the SAGE game engine, which was used for multiple Electronic Arts RTS games in mid-to-late 2000s. Our current focus is on Command & Conquer™: Generals. For more information visit our [About](/) page._
@@ -99,8 +99,8 @@ I continued working on the control bar Tim had started the previous month. I rem
 
 #### Adventures in input handling
 
-To make camera movement, selection and the UI all work together with regards to player input, I had make some changes to input handling. Until this point we had used a list of `InputMessageHandler`s in a fixed but hard to control order — engine subsystems registered input handlers by pushing them to the input handler list, either to the start or the end. Each input message was passed to each handler in order, and the handlers could choose if they mark the event as handled or not (which stops further propagation of the event).
+In order to make camera movement, selection and the UI all work together, I had make some changes to input handling. Until this point we had used a list of `InputMessageHandler`s in a fixed but hard to control order — engine subsystems registered input handlers by pushing them to the input handler list, either to the start or the end. Each input message was passed to each handler in order, and the handlers could choose if they mark the event as handled or not (which stops further propagation of the event).
 
-However, the issue was that the event handling order was fixed, which isn't always the case. For instance: the UI input handler should normally be the first system to handle mouse events. This makes sense, as clicking a button in the navbar should call the button's click handler instead of selecting a unit hidden behind the UI. However, when panning or rotating the camera (or making a box selection) the UI should ignore your mouse events. Beforehand this was handled by building special cases to input handlers, which meant that the camera system had to know about the selection system, and vice versa, making it hard to maintain.
+However, the issue was that the event handling order was fixed, which isn't always the case. For instance: the UI input handler should normally be the first system to handle mouse events. This makes sense, as clicking a button in the navbar should call the button's click handler instead of selecting a unit hidden behind the UI. However, when panning or rotating the camera (or making a box selection) the UI should ignore your mouse events. This was handled by building special cases to input handlers, which meant that the different input handlers were tightly coupled and full of hacks.
 
 The solution was rather simple: somewhat inspired by operating system [interrupt handlers](https://en.wikipedia.org/wiki/Interrupt_handler) I assigned each handler a priority value, which they can change at will if need be. Priority values are just entries in an enum, so the handling order is easy to understand at a glance and trivial to rearrange at will. In practise this meant that, for example, the selection system can increase its priority to be higher than the UI system's when the user is making a box selection. Input handlers are iterated in their priority order each frame, and messages are handled like before.

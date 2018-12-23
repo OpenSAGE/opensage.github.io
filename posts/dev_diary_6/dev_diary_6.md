@@ -2,7 +2,7 @@
 slug: "dev-diary-6-first-release"
 title: "OpenSAGE Dev Diary #6 - and 1st release!"
 author: "Tim Jones"
-date: 2018-02-10
+date: "2018-02-10"
 ---
 
 _[This post](http://timjones.io/blog/archive/2018/02/10/opensage-dev-diary-6-and-first-release) was originally published on Tim's blog._

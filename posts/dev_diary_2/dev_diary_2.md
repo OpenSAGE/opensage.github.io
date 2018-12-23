@@ -2,7 +2,7 @@
 slug: "dev-diary-2"
 title: "OpenSAGE Dev Diary #2"
 author: "Tim Jones"
-date: 2017-12-10
+date: "2017-12-10"
 ---
 
 _[This post](http://timjones.io/blog/archive/2017/12/10/opensage-dev-diary-2-2017-12-10) was originally published on Tim's blog._

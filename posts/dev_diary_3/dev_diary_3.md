@@ -2,7 +2,7 @@
 slug: "dev-diary-3"
 title: "OpenSAGE Dev Diary #3"
 author: "Tim Jones"
-date: 2017-12-17
+date: "2017-12-17"
 ---
 
 [1]: https://en.wikipedia.org/wiki/SAGE_(game_engine)

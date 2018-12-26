@@ -68,7 +68,7 @@ In March we also had two new contributors: [Evgeny Ivchenko](https://github.com/
 
 ### April
 
-While March was a bit quieter than the preceeding months, progress sped up in April.
+While March was a bit quieter than the preceding months, progress sped up in April.
 
 Tim tackled two larger features in April:
 1. **macOS support**. While the engine technically could run on macOS at this point, things are rarely that easy — supporting macOS required various fixes to rendering, shader compilation and file handling.
@@ -174,7 +174,7 @@ For comparison, here's what the scene would have looked like last month:
 
 ![A similar screenshot as the previous one, except without the aforementioned features](./no_bridges_water_shadows.png)
 
-There is still lot to improve (water shading, tree shadows, rounded road interections) but I think it's fair to say we've almost reached visual parity with the original game.
+There is still lot to improve (water shading, tree shadows, rounded road intersections) but I think it's fair to say we've almost reached visual parity with the original game.
 
 Michael finished BFME1 INI parsing and continued with Battle for Middle Earth II. At the time of writing the work in still ongoing, but it shouldn't take much longer. Being able to parse all INI files in BFME2 will be an important milestone, as it means we can effectively parse all INI files ever written for SAGE 1. Later games still contain some INI files, but starting with C&C3 the vast majority of configuration data was moved to XML.
 
@@ -186,7 +186,7 @@ I reworked our selection system to actually create and post `Order` messages ins
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4O7HD_rpLdE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-I also refactored some bits of our rendering pipeline to make frustum culling and sorting faster. Frustum culling can now be performated in multiple threads using [`Parallel.ForEach`](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.parallel.foreach?view=netframework-4.7.2). The FPS impact isn't huge; I measured 5-10% improvement on a quad core Intel i5, but the benefits might be greater on a system with more cores. If you know something about optimising frustum-AABB (or sphere) intersections, get in touch!
+I also refactored some bits of our rendering pipeline to make frustum culling and sorting faster. Frustum culling can now be performed using multiple threads with [`Parallel.ForEach`](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.parallel.foreach?view=netframework-4.7.2). The FPS impact isn't huge; I measured 5-10% improvement on a quad core Intel i5, but the benefits might be greater on a system with more cores. If you know something about optimising frustum-AABB (or sphere) intersections, get in touch!
 
 Oh, and I also wrote this website and two blog posts. You can read more about the former from [the other blog post](/blog/new-website/) we've published today.
 
@@ -234,7 +234,7 @@ Due to the volunteer nature of the project, we can't promise anything at all. Re
 
 To reiterate, it has been a great year for OpenSAGE. We'd like to thank everyone who contributed to the project this past year, whether it was code, information or words of encouragement.
 
-We're always looking for new contributors! If you want to contribute code or information about SAGE and its games, or just follow the development, you can do so on our [GitHub](https://github.com/OpenSAGE/OpenSAGE) and [Discord](https://discord.gg/G2FhZUT). Pull requests and bug reports of all kinds are welcome, though there might be occasional delays with code reviews and merges
+We're always looking for new contributors! If you want to contribute code or information about SAGE and its games, or just follow the development, you can do so on our [GitHub](https://github.com/OpenSAGE/OpenSAGE) and [Discord](https://discord.gg/G2FhZUT). Pull requests and bug reports of all kinds are welcome, though there might be occasional delays with code reviews and merges.
 
 You can follow this website for future development updates; every update will also be linked to the #announcements channel on Discord.
 

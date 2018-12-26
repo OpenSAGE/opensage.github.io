@@ -14,12 +14,6 @@
   color: initial;
 }
 
-.post-content p,
-.post-content li {
-  text-align: justify;
-  word-spacing: -1px;
-}
-
 .post-content li > p {
   margin-top: 2px;
   margin-bottom: 8px;

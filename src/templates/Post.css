@@ -20,6 +20,11 @@
   word-spacing: -1px;
 }
 
+.post-content li > p {
+  margin-top: 2px;
+  margin-bottom: 8px;
+}
+
 .post-content blockquote {
   border-left: solid lightgray 4px;
   padding-left: 1em;

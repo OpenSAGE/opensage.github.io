@@ -5,7 +5,7 @@ author: "Paavo Huhtala"
 date: "2018-12-22"
 ---
 
-_OpenSAGE is an open source re-implementation of the SAGE game engine, which was used for multiple Electronic Arts RTS games in mid-to-late 2000s. Our current focus is on Command & Conquer™: Generals. For more information visit our [About](/) page._
+_OpenSAGE is an open source C# re-implementation of the SAGE game engine, which was used for multiple Electronic Arts RTS games in mid-to-late 2000s. Our current focus is on Command & Conquer™: Generals. For more information visit our [About](/) page._
 
 It has been a great year for OpenSAGE. It saw our first release, the implementation of many important features, the beginning and continuing growth of our community and the shift from a single developer's hobby project towards a proper open source team effort.
 
@@ -180,7 +180,7 @@ Michael finished BFME1 INI parsing and continued with Battle for Middle Earth II
 
 We had a new contributor this month: [LanYi](https://github.com/BSG-75). He fixed a bug preventing the data viewer from working for RA3 and later games, added tooltips to the data viewer file listing and implemented more instructions for the ActionScript VM.
 
-I reworked our selection system to actually create and post `Order` messages instead of just drawing a debug overlay over selected objects. Using Stephan's new audio system I also implemented selection voices (_"Wanna make some improvements?"_, _"Light tank of the GLA!"_ and so on). Using my selection system improvements Tim made some parts of the control bar actually work. The command buttons change depending on the selected unit and you can buy and sell buildings, though money, construction, energy or other gameplay elements are not yet involved.
+I reworked our selection system to actually create and post `Order` messages instead of just drawing a debug overlay over selected objects. Using Stephan's new audio system I also implemented selection voices (_" Let's build!"_, _"Light tank of the GLA!"_ and so on). Using my selection system improvements Tim made some parts of the control bar actually work. The command buttons change depending on the selected unit and you can buy and sell buildings, though money, construction, energy or other gameplay elements are not yet involved.
 
 <div class="video-responsive">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4O7HD_rpLdE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -191,3 +191,53 @@ I also refactored some bits of our rendering pipeline to make frustum culling an
 Oh, and I also wrote this website and this blog post. You can read more about the former from the other blog post we've published today. **LINK HERE**
 
 ## Future plans
+
+> New construction?
+>
+> -- <cite>USA construction dozer, Command and Conquer: Generals</cite>
+
+Due to the volunteer nature of the project, we can't promise anything at all. Regardless, here are a few things we've talked about doing in no particular order:
+
+* **Unit movement**
+
+  This will be a gradual process. The first prototype is likely going to be completely "wrong" from the game logic POV; a (maybe animated) model linearly moving between two points. We'll gradually add collision detection, passability, pathfinding, tire/track trails, sounds, actual locomotors, collision avoidance, group movement and so on.
+
+* **Proper game loop** ([#102](https://github.com/OpenSAGE/OpenSAGE/issues/102))
+
+  We currently perform rendering and logic updates as fast as we can. We need to rework our game loop so that rendering and UI updates can happen as often as possible, while simulation happens at regular intervals (likely at 5 updates / second). 
+
+* **Networking prototype**
+
+  Adding support for multiplayer is likely going to be easier than implementing enough scripting and AI to make single player and/or skirmish playable. A networking prototype would involve serialising `Order` objects to bytes and sending them over TCP.
+
+* **INI parser refactor**
+
+  When our INI parser is (soon) feature complete, we'll know what features we need to support for the next iteration. The current version doesn't use reflection or code generation, and relies on manually written lookup tables. As a result we have a lot (thousands of lines) of boilerplate for INI parsing.
+
+* **More game mechanics**
+
+  Money, energy, upgrades, construction etc.
+
+* **Map objects in BFME maps**
+* **Blender plugin**
+* **Data viewer redesign**
+* **Editing support for BIG editor**
+* **Water shading**
+* **Smooth road intersections and curved roads**
+
+## Closing words
+
+> Wanna make some improvements?
+>
+> -- <cite>USA construction dozer, Command and Conquer: Generals</cite>
+
+
+To reiterate, it has been a great year for OpenSAGE. We'd like to thank everyone who contributed to the project this past year, whether it was code, information or words of encouragement.
+
+We're always looking for new contributors! If you want to contribute code or information about SAGE and its games, or just follow the development, you can do so on our [GitHub](https://github.com/OpenSAGE/OpenSAGE) and [Discord](https://discord.gg/G2FhZUT). Pull requests and bug reports of all kinds are welcome, though there might be occasional delays with code reviews and merges
+
+You can follow this website for future development updates; every update will also be linked to the #announcements channel on Discord.
+
+If you feel like you haven't read enough about OpenSAGE yet, visit our [archive](/blog) to read the previous development updates.
+
+Thank you!

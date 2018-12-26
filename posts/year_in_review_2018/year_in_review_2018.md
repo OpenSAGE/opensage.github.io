@@ -1,6 +1,7 @@
 ---
 slug: "year-in-review-2018"
 title: "Year in Review 2018"
+summary: "A comprehensive overview of what's been happening to OpenSAGE (an open source RTS engine) in 2018."
 author: "Paavo Huhtala"
 date: "2018-12-26"
 ---

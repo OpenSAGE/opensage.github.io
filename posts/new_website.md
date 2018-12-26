@@ -1,6 +1,7 @@
 ---
 slug: "new-website"
 title: "We have a new website!"
+summary: "OpenSAGE has a brand new website and blog!"
 author: "Paavo Huhtala"
 date: "2018-12-26"
 ---

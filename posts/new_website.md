@@ -2,7 +2,7 @@
 slug: "new-website"
 title: "We have a new website!"
 author: "Paavo Huhtala"
-date: 2018-12-21
+date: "2018-12-26"
 ---
 
 As you've probably noticed from reading this, we now have a website. The goal is to gather information about the project in a more end user friendly format & style than the [GitHub page](https://github.com/OpenSAGE/OpenSAGE), and to have a place where we can publish (hopefully!) regular development updates about the project. Previous blog posts about OpenSAGE were published on [Tim's blog](http://timjones.io/), and they have been imported to this blog too - you can find them from [the archive](/blog).

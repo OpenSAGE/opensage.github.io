@@ -2,7 +2,7 @@
 slug: "year-in-review-2018"
 title: "Year in Review 2018"
 author: "Paavo Huhtala"
-date: "2018-12-22"
+date: "2018-12-26"
 ---
 
 _OpenSAGE is an open source C# re-implementation of the SAGE game engine, which was used for multiple Electronic Arts RTS games in mid-to-late 2000s. Our current focus is on Command & Conquer™: Generals. For more information visit our [About](/) page._
@@ -79,7 +79,7 @@ Tim tackled two larger features in April:
 
 ![OpenSAGE Viewer ported to Dear ImGui, first screenshot.](./imgui_0.1.png)
 
-**Trivia**: This wasn't the first time the data viewer had been rewritten. It started out as a snazzy-looking [WPF](https://en.wikipedia.org/wiki/Windows_Presentation_Foundation) app (which you can see in the [first dev diary](/blog/dev-diary-1)), but in November 2017 it was ported to Eto.Forms for macOS and Linux support. We like rewriting things.
+**Trivia**: This wasn't the first time the data viewer had been rewritten. It started out as a snazzy-looking [WPF](https://en.wikipedia.org/wiki/Windows_Presentation_Foundation) app (which you can see in the [first dev diary](/blog/dev-diary-1/)), but in November 2017 it was ported to Eto.Forms for macOS and Linux support. We like rewriting things.
 
 Oh, and Tim also started working on road loading & rendering.
 
@@ -188,7 +188,7 @@ I reworked our selection system to actually create and post `Order` messages ins
 
 I also refactored some bits of our rendering pipeline to make frustum culling and sorting faster. Frustum culling can now be performated in multiple threads using [`Parallel.ForEach`](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.parallel.foreach?view=netframework-4.7.2). The FPS impact isn't huge; I measured 5-10% improvement on a quad core Intel i5, but the benefits might be greater on a system with more cores. If you know something about optimising frustum-AABB (or sphere) intersections, get in touch!
 
-Oh, and I also wrote this website and this blog post. You can read more about the former from the other blog post we've published today. **LINK HERE**
+Oh, and I also wrote this website and two blog posts. You can read more about the former from [the other blog post](/blog/new-website/) we've published today.
 
 ## Future plans
 

@@ -71,11 +71,11 @@ In March we also had two new contributors: [Evgeny Ivchenko](https://github.com/
 While March was a bit quieter than the preceeding months, progress sped up in April.
 
 Tim tackled two larger features in April:
-1. macOS support. While the engine technically could run on macOS at this point, things are rarely that easy — supporting macOS required various fixes to rendering, shader compilation and file handling.
+1. **macOS support**. While the engine technically could run on macOS at this point, things are rarely that easy — supporting macOS required various fixes to rendering, shader compilation and file handling.
 
 ![OpenSAGE running on macOS](./macOS.png)
 
-2. Data viewer rewrite. At the time the data viewer used [Eto.Forms](https://github.com/picoe/Eto), a cross-platform Windows Forms -esque UI framework. While it had worked well enough for our use for a while, in February we encountered issues when trying to port it to Linux. Our approach to embedding a game view into the app only worked with Direct3D (and possibly Metal), but at the time there was no easy solution for embedding an OpenGL view. Intrigued by stories of easy embeddability and great productivity, we made the decision to port the data viewer from Eto.Forms to [Dear ImGui](https://github.com/ocornut/imgui) instead of continuing to struggle with Eto.Forms. Dear ImGui (oftentimes called just `imgui`) is an [immediate mode](https://en.wikipedia.org/wiki/Immediate_Mode_GUI) UI framework specifically designed for rapid development of game engine and content creation tools. It didn't take long to re-implement the basic file browser, and the port was finished in just a few days. Here's the very first screenshot of the new data viewer:
+2. **Data viewer rewrite**. At the time the data viewer used [Eto.Forms](https://github.com/picoe/Eto), a cross-platform Windows Forms -esque UI framework. While it had worked well enough for our use for a while, in February we encountered issues when trying to port it to Linux. Our approach to embedding a game view into the app only worked with Direct3D (and possibly Metal), but at the time there was no easy solution for embedding an OpenGL view. Intrigued by stories of easy embeddability and great productivity, we made the decision to port the data viewer from Eto.Forms to [Dear ImGui](https://github.com/ocornut/imgui) instead of continuing to struggle with Eto.Forms. Dear ImGui (oftentimes called just `imgui`) is an [immediate mode](https://en.wikipedia.org/wiki/Immediate_Mode_GUI) UI framework specifically designed for rapid development of game engine and content creation tools. It didn't take long to re-implement the basic file browser, and the port was finished in just a few days. Here's the very first screenshot of the new data viewer:
 
 ![OpenSAGE Viewer ported to Dear ImGui, first screenshot.](./imgui_0.1.png)
 
@@ -152,4 +152,42 @@ We had two new contributors in November:
 * [Jana Mohn](https://github.com/Qibbi), an another familiar user from Discord contributed her first patch, which optimized some of our math code, added a way to disable vsync in the data viewer and added an integrated FPS counter.
 
 
+### December
 
+We've finally reached December! There are at least two interesting new developments:
+
+* **Blender plugin**
+
+  We've started prototyping a new Blender plugin for W3D (SAGE's model format) based on OpenSAGE. We didn't yet have code for serialising mesh and animation data back into W3D, so Tim has been working on that, while Stephan focused on the Blender side of things. This is still early in development and there might be unforeseen challenges, but it certainly would be neat if people could benefit from our work even before the engine is actually usable for games.
+
+* **BIG editor**
+
+  The data viewer is one of the oldest parts of the project, but lately it has suffered from a bit of an identity crisis. On one hand it's great as an archive browser, but on the other hand the file-based user interface is becoming less and less useful as the project develops. Since we can load pretty much every asset in Generals, individual files (like textures and models) are starting to matter less than game objects and gameplay elements (such as buildings, units, weapons and upgrades). Having an archive browser is still useful though, especially because [FinalBIG](http://www.cnclabs.com/downloads/details.aspx?id=240) is old, clunky and limited to Windows.
+
+  For those reasons, Tim has started the project of splitting the current data viewer into two separate programs: data viewer, and an archive browser / editor. At the time of writing both programs are very similar to each other (the only difference being that the archive editor has no asset preview), but expect them to diverge when we've figured out what the best UI for the data viewer should be. Despite the name the archive editor cannot yet be used for modifying archives, but that is absolutely on our TODO-list.
+
+In other news, Tim began the month by merging the shadows branch after making a bunch of improvements to it. He followed that up by implementing bridges and basic water rendering. Here's a screenshot with all three features enabled:
+
+![A screenshot demonstrating bridges, water and shadows in OpenSAGE](./bridges_water_shadows.png)
+
+For comparison, here's what the scene would have looked like last month:
+
+![A similar screenshot as the previous one, except without the aforementioned features](./no_bridges_water_shadows.png)
+
+There is still lot to improve (water shading, tree shadows, rounded road interections) but I think it's fair to say we've almost reached visual parity with the original game.
+
+Michael finished BFME1 INI parsing and continued with Battle for Middle Earth II. At the time of writing the work in still ongoing, but it shouldn't take much longer. Being able to parse all INI files in BFME2 will be an important milestone, as it means we can effectively parse all INI files ever written for SAGE 1. Later games still contain some INI files, but starting with C&C3 the vast majority of configuration data was moved to XML.
+
+We had a new contributor this month: [LanYi](https://github.com/BSG-75). He fixed a bug preventing the data viewer from working for RA3 and later games, added tooltips to the data viewer file listing and implemented more instructions for the ActionScript VM.
+
+I reworked our selection system to actually create and post `Order` messages instead of just drawing a debug overlay over selected objects. Using Stephan's new audio system I also implemented selection voices (_"Wanna make some improvements?"_, _"Light tank of the GLA!"_ and so on). Using my selection system improvements Tim made some parts of the control bar actually work. The command buttons change depending on the selected unit and you can buy and sell buildings, though money, construction, energy or other gameplay elements are not yet involved.
+
+<div class="video-responsive">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4O7HD_rpLdE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+I also refactored some bits of our rendering pipeline to make frustum culling and sorting faster. Frustum culling can now be performated in multiple threads using [`Parallel.ForEach`](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.parallel.foreach?view=netframework-4.7.2). The FPS impact isn't huge; I measured 5-10% improvement on a quad core Intel i5, but the benefits might be greater on a system with more cores. If you know something about optimising frustum-AABB (or sphere) intersections, get in touch!
+
+Oh, and I also wrote this website and this blog post. You can read more about the former from the other blog post we've published today. **LINK HERE**
+
+## Future plans

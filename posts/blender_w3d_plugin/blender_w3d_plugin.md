@@ -6,11 +6,11 @@ author: "Stephan Vedder"
 date: "2019-11-05"
 ---
 
-As we've already announced in our latest post, we're working on a **W3D Blender Plugin**. We strongl
+As we've already announced in our latest post, we're working on a **W3D Blender Plugin**. We strongl  **??**
 
-You probably already know that the Westwood 3D (W3D) format is the 3D format used in the first games that were created with the SAGE engine (later on replaced by a serialized version called). One big issue with that format used to be that there are very little tools that allow authoring of these files. The offical modding SDKs contained plugins for old Autodesk 3dsmax versions (which were recent at the time). The issue is that Autodesk 3dsmax is a commercial tool and the offical plugin is not available for current versions anymore. Apart from this it was lacking some features the community desperatly needs, like the import of compressed animations.
+You probably already know that the Westwood 3D (W3D) format is the 3D format used in the first games that were created with the SAGE engine (later on replaced by a serialized version called W3X). One big issue with that format used to be that there are very little tools that allow authoring of these files. The offical modding SDKs contained plugins for old Autodesk 3dsmax versions (which were recent at the time). The issue is that Autodesk 3dsmax is a commercial tool and the offical plugin is not available for current versions anymore. Apart from this it was lacking some features the community desperatly needs, like the import of compressed animations.
 
-As a conclusion of this we decided to write an opensource Blender Plugin, which allows to export and import Westwood 3D files. Our existing W3D code from OpenSource was a big advantage, since it helped us getting a strong understanding of the format itself.
+As a conclusion of this we decided to write an opensource Blender Plugin, which allows to export and import W3D files. Our existing W3D code from OpenSage was a big advantage, since it helped us getting a strong understanding of the format itself.
 
 # Why Blender
 
@@ -34,7 +34,7 @@ The model as you can see it in the screenshot above is in it's default state. As
 
 ![Gondor Barracks Shader](./barracks_nodes.png)
 
-Since there are many material options, which are specific to `W3D` we added two new property groups to the material section of each object. The properties there are similar to previous W3D plugins!
+Since there are many material options, which are specific to `W3D` we added two new property groups to the material section of each object. The properties there are similar to previous W3D plugins! At the moment those properties have no effect inside blender, but are mandatory for our goal of a lossless file import -> export workflow.
 
 
 Let's continue by importing a simple skinned model, like the Cave Troll from Battle for Middleearth:

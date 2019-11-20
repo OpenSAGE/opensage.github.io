@@ -23,14 +23,14 @@ With the latest major Blender 2.8 release it became the first choice for opensou
 *This walkthrough assumes you know how Blender works and how to use it*
 
 As a user of the plugin you just want to install the latest version of the plugin, which can be found [here](https://github.com/OpenSAGE/OpenSAGE.BlenderPlugin/releases). Through the preferences window you can select that zip archive to be installed. The import and export submenus now contain entries for the `*.w3d` format.
-During import of a model it's important that all references files (Skeleton & Textures) can be found, so they must be in the same folder as the file you want to import.
+During import of a model it's important that all referenced files (Skeleton & Textures) can be found, so they must be in the same folder as the file you want to import.
 
 ## General
 
 So at first we'll start by importing a simple structure, like the Gondor Barracks from Battle for Middleearth:
 ![Gondor Barracks](./barracks.png)
 
-The model as you can see it in the screenshot above is in it's default state. As you can see in the scene collection on the right we've create a parent collection for all meshes that are part of the `W3D` file. Since materials in Blender 2.8 are completly node based the plugin automatically creates a node based shader setup that matches the material specified inside the model. See below for the barracks shader node setup, which uses a diffuse and normal texture.
+The model as you can see it in the screenshot above is in it's default state. As you can see in the scene collection on the right we create a parent collection for all meshes that are part of the `W3D` file. Since materials in Blender 2.8 are completly node based the plugin automatically creates a node based shader setup that matches the material specified inside the model. See below for the barracks shader node setup, which uses a diffuse and normal texture.
 
 ![Gondor Barracks Shader](./barracks_nodes.png)
 
@@ -41,7 +41,7 @@ Since there are many material options, which are specific to `W3D` we added two 
 Let's continue by importing a simple skinned model, like the Cave Troll from Battle for Middleearth:
 ![Cave Troll](./cave_troll.png)
 
-So let's take a closer look on what happened here. During import the skeleton is automatically loaded and applied to to the mesh (in the scene collection it's named `MUCAVTROLL_SKL`). The pose that you can now see is the so called **Rest Pose**, which means that no animations are applied to the hierarchy.
+So let's take a closer look on what happened here. During import the skeleton is automatically loaded and applied to the mesh (in the scene collection it's named `MUCAVTROLL_SKL`). The pose that you can now see is the so called **Rest Pose**, which means that no animations are applied to the hierarchy.
 
 ## Animation
 
@@ -51,7 +51,7 @@ If we want to add an animation we need to load the according animation file, e.g
 
 ## Export
 
-Exporting W3D models is a tricky part since meshes, skeletons and animations should get split in seperate files. During export the user must configure the export options accordinlgy.
+Exporting W3D models is a tricky part since meshes, skeletons and animations should get split in seperate files. During export the user must configure the export options accordingly.
 
 ## Render
 

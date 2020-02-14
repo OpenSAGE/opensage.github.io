@@ -10,9 +10,9 @@ Figuring out how to render the roads correctly in OpenSAGE turned out to be a li
 
 Here's a list of all posts published so far:
 
-* [Part 1: Taking stock (this post)](/blog/the-way-is-the-goal-part-1-taking-stock)
-* [Part 2: Inspecting the map file](/blog/the-way-is-the-goal-part-2-inspecting-the-map-file)
-* [Part 3: Building a graph data structure](/blog/the-way-is-the-goal-part-2-inspecting-the-map-file)
+* [Part 1: Taking stock (this post)](/blog/roads-how-boring-part-1-taking-stock)
+* [Part 2: Inspecting the map file](/blog/roads-how-boring-part-2-inspecting-the-map-file)
+* [Part 3: Building a graph data structure](/blog/roads-how-boring-part-3-building-a-graph-data-structure)
 
 We'll start by creating a test map in the World Builder for _Command & Conquer Generals Zero Hour_ to explore the different road types and their features.
 

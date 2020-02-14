@@ -6,7 +6,7 @@ author: "Daniel Sklenitzka"
 date: "2020-02-08"
 ---
 
-Figuring out how to render the roads correctly in OpenSAGE turned out to be a little more challenging than expected. This is the third post in a series describing the journey. [Last time](/blog/roads-how-boring-part-2-inspecting-the-map-files) we found out that the map files only store start and end positions for the road segments, but no information about their connections.
+Figuring out how to render the roads correctly in OpenSAGE turned out to be a little more challenging than expected. This is the third post in a series describing the journey. [Last time](/blog/roads-how-boring-part-2-inspecting-the-map-file) we found out that the map files only store start and end positions for the road segments, but no information about their connections.
 
 In order to decide which textures we have to draw, we need to build a graph data structure with _nodes_ and _edges_. That way we can use the number of edges and the angles between them for each node to select a texture for the crossing or curve.
 

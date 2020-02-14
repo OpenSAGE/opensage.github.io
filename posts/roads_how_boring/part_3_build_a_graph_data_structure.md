@@ -42,26 +42,26 @@ internal sealed class RoadTopologyEdge
 We create the graph that by creating a _RoadTopologyEdge_ for every pair of points in the map file. For both endpoints, we either create a new _RoadTopologyNode_, or we reuse an existing one if we already created one at *exactly* the same location and with the same type (roads of different types are never connected):
 
 ```csharp
-        public void AddSegment(RoadTemplate template, MapObject start, MapObject end)
-        {
-            var startNode = GetOrCreateNode(start.Position);
-            var endNode = GetOrCreateNode(end.Position);
+public void AddSegment(RoadTemplate template, MapObject start, MapObject end)
+{
+    var startNode = GetOrCreateNode(start.Position);
+    var endNode = GetOrCreateNode(end.Position);
 
-            // Edge case handling omitted for brevity (pun maybe intended)
+    // Edge case handling omitted for brevity (pun maybe intended)
 
-            var edge = new RoadTopologyEdge(
-                template,
-                startNode,
-                start.RoadType,
-                endNode,
-                end.RoadType,
-                Edges.Count);
+    var edge = new RoadTopologyEdge(
+        template,
+        startNode,
+        start.RoadType,
+        endNode,
+        end.RoadType,
+        Edges.Count);
 
-            Edges.Add(edge);
+    Edges.Add(edge);
 
-            startNode.Edges.Add(edge);
-            endNode.Edges.Add(edge);
-        }
+    startNode.Edges.Add(edge);
+    endNode.Edges.Add(edge);
+}
 ```
 
 ## Road alignment
@@ -76,7 +76,7 @@ By default, each texture is drawn from the segment's start to its end point, whi
 
 But how does the engine decide which segment should be rotated? And what happens when more than two segments are connected? What about cyclic graphs?
 
-It took a lot of experimenting with complex graphs like the one below to figure it out.
+It took a lot of experimenting with complex graphs like this one to figure it out:
 
 ![Aligned road graph](./aligned_graph.png)
 
@@ -87,6 +87,7 @@ It took a lot of experimenting with complex graphs like the one below to figure 
 In order to implement that, we need to know an edge's age. Apparently new edges are added to a map at the front of the object list, so we can use an edge's index in the list as its age. We also have to know if an edge was already aligned to another edge, so we added two properties to the `RoadTopologyEdge` class:
 
 ```csharp
+
 public int Index { get; }
 public int AlignedLikeIndex { get; set; } = -1;
 ```

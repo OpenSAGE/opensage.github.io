@@ -39,7 +39,7 @@ internal sealed class RoadTopologyEdge
 }
 ```
 
-We create the graph that by creating a _RoadTopologyEdge_ for every pair of points in the map file. For both endpoints, we either create a new _RoadTopologyNode_, or we reuse an existing one if we already created one at *exactly* the same location and with the same type (roads of different types are never connected):
+We create the graphs by creating a _RoadTopologyEdge_ for every pair of points in the map file. For both endpoints, we either create a new _RoadTopologyNode_, or we reuse an existing one if we already created one at *exactly* the same location and with the same type (roads of different types are never connected):
 
 ```csharp
 public void AddSegment(RoadTemplate template, MapObject start, MapObject end)
@@ -74,7 +74,7 @@ By default, each texture is drawn from the segment's start to its end point, whi
 
 ![Connected markings (aligned)](./not_aligned.png)
 
-But how does the engine decide which segment should be rotated? And what happens when more than two segments are connected? What about cyclic graphs?
+But how does the engine decide which segment should be rotated? What happens when more than two segments are connected? What about cyclic graphs?
 
 It took a lot of experimenting with complex graphs like this one to figure it out:
 
@@ -82,12 +82,11 @@ It took a lot of experimenting with complex graphs like this one to figure it ou
 
 * Edges created earlier are aligned to edges created later on (this is why in the example above, the left edge is rotated as it was created first).
 * At nodes with more than two edges, the second newest edge is aligned to the newest one. All others are ignored.
-* When a edge is added to a graph, the whole graph's alignment is reevaluated. This means that the newest edge in a graph determines the aligment of all other nodes.
+* When an edge is added to a graph, the whole graph's alignment is reevaluated. This means that the newest edge in a graph determines the aligment of all other edges.
 
 In order to implement that, we need to know an edge's age. Apparently new edges are added to a map at the front of the object list, so we can use an edge's index in the list as its age. We also have to know if an edge was already aligned to another edge, so we added two properties to the `RoadTopologyEdge` class:
 
 ```csharp
-
 public int Index { get; }
 public int AlignedLikeIndex { get; set; } = -1;
 ```
@@ -195,8 +194,8 @@ public void SwapEndpoints()
 }
 ```
 
-As you can tell from the comment, there seems to be a bug in the original engine. Normally, when two segment are connected, their endpoints are merged into one. We can then set the corner type for this node as described in [part 1](/blog/roads-how-boring-part-1-taking-stock). This road type is then stored redundantly in both map objects that make up the two endpoints of the two edges. When we swap the endpoints of one of the edges (but not their road types), it can happen that the two edges disagree about the corner type. This can also be seen in World Builder:
+As you can tell from the comment, there seems to be a bug in the original engine. Normally, when two segment are connected, their endpoints are merged into one. We can then set the corner type for this node as described in [part 1](/blog/roads-how-boring-part-1-taking-stock). This road type is then stored redundantly in both map objects that make up the two end points of the two edges. When we swap the end points of one of the edges (but not their road types), it can happen that the two edges disagree about the corner type. This can also be seen in World Builder:
 
 ![Image showing the bug](./corner_type_bug.png)
 
-The labels show the corner types of the segment end points, the arrows show the segment directions (start to end). In the lower graph, one edge has an opposing direction and this is rotated by the alignment algorithm. This causes the lower left corner to be incorrectly rendered as a broad curve, even though both edges say it should be a tight curve.
+The labels show the corner types of the segment end points, the arrows show the segment directions (start to end). In the lower graph, one edge has an opposing direction and thus is rotated by the alignment algorithm. This causes the lower left corner to be incorrectly rendered as a broad curve, even though both edges say it should be a tight curve.

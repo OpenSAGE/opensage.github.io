@@ -8,6 +8,8 @@ date: "2020-01-31"
 
 Figuring out how to render the roads correctly in OpenSAGE turned out to be a little more challenging than expected. This is the first post in a series describing the journey.
 
+![Roads in OpenSAGE](./open_sage_roads.png)
+
 Here's a list of all posts published so far:
 
 * [Part 1: Taking stock (this post)](/blog/roads-how-boring-part-1-taking-stock)
@@ -22,7 +24,7 @@ We can create roads using the `Road` tool. First we have to select one of the pr
 
 ![Predefined road types](./road_types.png)
 
-We can create individual road segments of the selected type by dragging the mouse from a start to an end point.
+Individual road segments of the selected type can be created by dragging the mouse from a start to an end point.
 
 ![Disconnected road segments](./disconnected_roads.png)
 
@@ -32,11 +34,11 @@ When two endpoints are moved close enough together, World Builder automatically 
 
 For each node, we can set the corner type that determines how corners are rendered, but it will only affect nodes with exactly two adjacent edges.
 
-Broad curve:
+**Broad curve:**
 ![Broad curve](./broad_curve.png)
-Tight curve:
+**Tight curve:**
 ![Tight curve](./tight_curve.png)
-Angled:
+**Angled:**
 ![Angled](./angled.png)
 
 If more than two edges are joined together, the node becomes a crossing and is rendered using a special texture:
@@ -55,7 +57,7 @@ Road TwoLaneDarkDotted
 End
 ```
 
-Let's take a look at that texture:
+Let's take a look at that texture):
 ![A sample road texture](./texture.png)
 
 Ah, so this is where the magic happens! Apparently there's one single image file for every road type containing the textures for all the different road types:
@@ -79,4 +81,4 @@ It should only be used for end points of a network (nodes with only one adjacent
 
 ![End cap (skewed)](./end_cap_skewed.png)
 
-In [the next post](/blog/roads-how-boring-part-2-inspecting-the-map-file) we'll find out how this road network is stored in the map file.
+In [the next post](/blog/roads-how-boring-part-2-inspecting-the-map-file) we'll try to find out how this road network is stored in the map file.

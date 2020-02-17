@@ -3,18 +3,12 @@ slug: "roads-how-boring-part-1-taking-stock"
 title: "Roads? How boring! Part 1: Taking stock"
 summary: "Part 1 of the series about rendering the roads in SAGE maps: Exploring the different road types"
 author: "Daniel Sklenitzka"
-date: "2020-01-31"
+date: "2020-02-17"
 ---
 
 Figuring out how to render the roads correctly in OpenSAGE turned out to be a little more challenging than expected. This is the first post in a series describing the journey.
 
-![Roads in OpenSAGE](./open_sage_roads.png)
-
-Here's a list of all posts published so far:
-
-* [Part 1: Taking stock (this post)](/blog/roads-how-boring-part-1-taking-stock)
-* [Part 2: Inspecting the map file](/blog/roads-how-boring-part-2-inspecting-the-map-file)
-* [Part 3: Building a graph data structure](/blog/roads-how-boring-part-3-building-a-graph-data-structure)
+![Roads in OpenSAGE](./open_sage_roads.jpg)
 
 We'll start by creating a test map in the World Builder for _Command & Conquer Generals Zero Hour_ to explore the different road types and their features.
 
@@ -81,4 +75,4 @@ It should only be used for end points of a network (nodes with only one adjacent
 
 ![End cap (skewed)](./end_cap_skewed.png)
 
-In [the next post](/blog/roads-how-boring-part-2-inspecting-the-map-file) we'll try to find out how this road network is stored in the map file.
+In the next post we'll try to find out how this road network is stored in the map file.

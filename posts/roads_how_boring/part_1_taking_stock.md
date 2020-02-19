@@ -10,6 +10,11 @@ Figuring out how to render the roads correctly in OpenSAGE turned out to be a li
 
 ![Roads in OpenSAGE](./open_sage_roads.jpg)
 
+Here's a list of all posts published so far:
+
+* [Part 1: Taking stock (this post)](/blog/roads-how-boring-part-1-taking-stock)
+* [Part 2: Inspecting the map file](/blog/roads-how-boring-part-2-inspecting-the-map-file)
+
 We'll start by creating a test map in the World Builder for _Command & Conquer Generals Zero Hour_ to explore the different road types and their features.
 
 ## Creating a test map
@@ -51,7 +56,7 @@ Road TwoLaneDarkDotted
 End
 ```
 
-Let's take a look at that texture):
+Let's take a look at that texture:
 ![A sample road texture](./texture.png)
 
 Ah, so this is where the magic happens! Apparently there's one single image file for every road type containing the textures for all the different road types:
@@ -75,4 +80,4 @@ It should only be used for end points of a network (nodes with only one adjacent
 
 ![End cap (skewed)](./end_cap_skewed.png)
 
-In the next post we'll try to find out how this road network is stored in the map file.
+In [the next post](/blog/roads-how-boring-part-2-inspecting-the-map-file) we'll try to find out how this road network is stored in the map file.

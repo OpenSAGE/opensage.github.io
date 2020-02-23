@@ -34,7 +34,7 @@ End
 
 So...the ingame road width seems to be about 31.5 feet, and not 35 as we suspected. It turns out the value we need to use is `RoadWidth * RoadWidthInTexture`.
 
-Now we can calculate the positions A, B, C and D from the drawing above and create the two triangles using vector arithmetic:
+Now we can calculate the positions A, B, C and D from the drawing above using vector arithmetic:
 
 ```csharp
 var direction = Vector3.Normalize(End - Start);
@@ -67,11 +67,11 @@ Now we finally have everything we need to render straight roads...and it works!
 
 ![Straight roads in OpenSAGE (stretched)](./straight_roads_stretched.png)
 
-Well...it kind of works. The road segments have different lengths, and our current implementation always stretches the texture to cover the whole width. That doesn't look right.
+Well...it kind of works. The road segments have different lengths, and our current implementation always stretches the texture to cover the whole length. That doesn't look right.
 
 ## Repeating the texture
 
-In order to fix this problem, we need to repeat the texture instead of stretching it. We can easily do that by specifying values greater than 1 for the U coordinate.
+In order to fix this problem, we need to _repeat_ the texture instead of stretching it. We can easily do that by specifying values greater than 1 for the U coordinate.
 
 We know that an unscaled road width is `0.25` in texture space, and that the texture length is `1` in texture space. The unscaled road width in world space is given by `RoadWidth`, so the texture length in world space must be `4 * RoadWidth`. We can calculate the new U coordinates by dividing the road segment's length by this value:
 

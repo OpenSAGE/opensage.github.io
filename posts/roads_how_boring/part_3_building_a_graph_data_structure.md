@@ -205,4 +205,4 @@ As you can tell from the comment, there seems to be a bug in the original engine
 
 The labels show the corner types of the segment end points, the arrows show the segment directions (start to end). In the lower graph, one edge has an opposing direction and thus is rotated by the alignment algorithm. This causes the lower left corner to be incorrectly rendered as a broad curve (the default value), even though both edges say it should be a tight curve.
 
-We'll have to keep that in mind for when we start rendering curves. Before we can do that though, we need to render straight road segments. In fact, we'll start doing that in the next post.
+We'll have to keep that in mind for when we start rendering curves. Before we can do that though, we need to render straight road segments. In fact, we'll start doing that in the [next post](/blog/roads-how-boring-part-4-rendering-straight-roads).

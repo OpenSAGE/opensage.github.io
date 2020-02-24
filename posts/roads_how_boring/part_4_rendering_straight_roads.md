@@ -1,9 +1,9 @@
 ---
 slug: "roads-how-boring-part-4-rendering-straight-roads"
 title: "Roads? How boring! Part 4: Rendering straight roads"
-summary: "Part 4 of the series about rendering the roads in SAGE maps: Building a graph data structure"
+summary: "Part 4 of the series about rendering the roads in SAGE maps: Rendering straight road segments"
 author: "Daniel Sklenitzka"
-date: "2020-02-24"
+date: "2020-02-25"
 ---
 
 Figuring out how to render the roads correctly in OpenSAGE turned out to be a little more challenging than expected. This is the fourth post in a series describing the journey. After converting the point pairs we read from the map file to a graph data structure [in the previous post](/blog/roads-how-boring-part-3-building-a-graph-data-structure), we are finally ready to actually start rendering something.
@@ -16,7 +16,7 @@ Our goal is to generate a [triangle mesh](https://en.wikipedia.org/wiki/Triangle
 
 The first step is to find the rectangle's corners' 3D coordinates in world space.
 
-![Straight road segment geometry drawing](./straight_drawing.png)
+![Straight road segment geometry drawing (created with geogebra.org)](./straight_drawing.png)
 
 We already know the start and end position, so all we need to calculate A, B, C and D is the (half) road width. Different road types have different widths, so it must be derivable from the road type definition:
 

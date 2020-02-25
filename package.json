@@ -6,6 +6,7 @@
     "start": "npm run develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
+    "clean": "gatsby clean",
     "thumbs": "node ./scripts/generate-thumbnails.js"
   },
   "dependencies": {

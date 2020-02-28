@@ -16,6 +16,7 @@ Here's a list of all posts published so far:
 * [Part 2: Inspecting the map file](/blog/roads-how-boring-part-2-inspecting-the-map-file)
 * [Part 3: Building a graph data structure](/blog/roads-how-boring-part-3-building-a-graph-data-structure)
 * [Part 4: Rendering straight roads](/blog/roads-how-boring-part-4-rendering-straight-roads)
+* [Part 5: Connecting the road segments](/blog/roads-how-boring-part-5-connecting-the-road segments)
 
 We'll start by creating a test map in the World Builder for _Command & Conquer Generals Zero Hour_ to explore the different road types and their features.
 

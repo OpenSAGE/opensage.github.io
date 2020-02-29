@@ -1,5 +1,5 @@
 ---
-slug: "roads-how-boring-part-5-connecting-the-road segments"
+slug: "roads-how-boring-part-5-connecting-the-road-segments"
 title: "Roads? How boring! Part 5: Connecting the road segments"
 summary: "Part 5 of the series about rendering the roads in SAGE maps: Connecting the road segments"
 author: "Daniel Sklenitzka"
@@ -14,7 +14,7 @@ Ignoring the different curve types for now, let's consider angled connections. W
 
 ![Intersection point X of two road segments](./angled_drawing_1.png)
 
-So, how can we calculate `X`? With the graph we created in [part 3](/blog/roads-how-boring-part-3-building_a_graph_data_structure), we can easily find the neighbor segment and its start and end position. For both the current and the neighbor segment, we can calculate the direction vector's normal (`directionNormal` and `neighborDirectionNormal`). We can calculate the average of these two vectors, normalize it and get a direction vector `toCornerDirection` pointing from the node position towards `X`.
+So, how can we calculate `X`? With the graph we created in [part 3](/blog/roads-how-boring-part-3-building-a-graph-data-structure), we can easily find the neighbor segment and its start and end position. For both the current and the neighbor segment, we can calculate the direction vector's normal (`directionNormal` and `neighborDirectionNormal`). We can calculate the average of these two vectors, normalize it and get a direction vector `toCornerDirection` pointing from the node position towards `X`.
 
 ![Direction vectors](./angled_drawing_2.png)
 

@@ -86,6 +86,6 @@ Et voilà (this time without triangle overlay):
 
 ![Straight roads in OpenSAGE (repeated)](./straight_roads_repeated.png)
 
-The segments are still disconnected of course...we'll tackle that [next time](/blog/roads-how-boring-part-5-connecting-the-road segments).
+The segments are still disconnected of course...we'll tackle that [next time](/blog/roads-how-boring-part-5-connecting-the-road-segments).
 
 [^1]: When we try to use this value, the textures are still a little off. Apparently the original engine used a truncated constant of `1.666` as an approximation.

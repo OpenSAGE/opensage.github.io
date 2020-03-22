@@ -42,4 +42,4 @@ As we saw in the [last post](/blog/roads-how-boring-part-4-rendering-straight-ro
 
 ![Connected road segments](./connected_segments.png)
 
-Next time, we'll take a first look at crossings.
+[Next time](/blog/roads-how-boring-part-6-choosing-a-crossing-type), we'll take a first look at crossings.

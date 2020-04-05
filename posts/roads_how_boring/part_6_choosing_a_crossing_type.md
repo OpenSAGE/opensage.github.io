@@ -37,4 +37,4 @@ Based on this information we can now choose the crossing type:
 
 Now that we have decided which texture to render, the next step is to choose the orientation. We need to find a vector in world coordinates that corresponds to the Up vector in texture space. We can again use the angles we calculated before and similar logic as above. In case of the asymmetric Y crossing, it might also be necessary to mirror the texture.
 
-In the next post, we'll render the crossings and connect them to their neighbors.
+In the [next post](/blog/roads-how-boring-part-7-rendering-crossings), we'll start rendering the crossings.

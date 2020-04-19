@@ -12,7 +12,7 @@ img[src*="helipad_texture.png"] {
 }
 </style>
 
-Figuring out how to render the roads correctly in OpenSAGE turned out to be a little more challenging than expected. This is the sixth post in a series describing the journey. After finding out when to render which crossing texture in the [previous post](/blog/roads-how-boring-part-6-choosing-a-crossing-type), we can now proceed to actually rendering them.
+Figuring out how to render the roads correctly in OpenSAGE turned out to be a little more challenging than expected. This is the seventh post in a series describing the journey. After finding out when to render which crossing texture in the [previous post](/blog/roads-how-boring-part-6-choosing-a-crossing-type), we can now proceed to actually rendering them.
 
 Consider the following screenshot of the same crossing with three different road types in wireframe mode:
 
@@ -105,4 +105,4 @@ When we know the size of the rectangle, we can calculate the offset of the node 
 
 ![Node positions in the crossing textures](./crossing_texture.png)
 
-Next time, we'll solve the other two problems (figuring out the texture coordinates calculating the start positions of the adjacent road segments A-G).
+[Next time](/blog/roads-how-boring-part-8-rendering-crossings-continued), we'll solve the other two problems (figuring out the texture coordinates and calculating the start positions of the adjacent road segments A-M).

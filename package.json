@@ -10,7 +10,7 @@
     "thumbs": "node ./scripts/generate-thumbnails.js"
   },
   "dependencies": {
-    "gatsby": "^2.20.29",
+    "gatsby": "^2.20.31",
     "gatsby-plugin-react-helmet": "^3.2.4",
     "gatsby-plugin-sharp": "^2.5.6",
     "gatsby-remark-images": "^3.2.5",

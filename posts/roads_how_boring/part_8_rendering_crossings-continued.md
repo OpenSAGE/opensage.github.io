@@ -71,4 +71,4 @@ The following table lists the vectors that need to be added to the node position
 And now, finally, the crossings are done:
 ![Crossing and road segments don't overlap anymore](./crossing_no_overlap.png)
 
-In the next post we'll tackle the curves.
+In the [next post](/blog/roads-how-boring-part-9-rendering-curves) we'll tackle the curves.

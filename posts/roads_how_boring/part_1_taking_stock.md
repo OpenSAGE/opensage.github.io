@@ -21,6 +21,7 @@ Here's a list of all posts published so far:
 * [Part 7: Rendering crossings](/blog/roads-how-boring-part-7-rendering-crossings)
 * [Part 8: Rendering crossings (continued)](/blog/roads-how-boring-part-8-rendering-crossings-continued)
 * [Part 9: Rendering curves](/blog/roads-how-boring-part-9-rendering-curves)
+* [Part 10: Considering the terrain](/blog/roads-how-boring-part-10-considering-the-terrain)
 
 We'll start by creating a test map in the World Builder for _Command & Conquer Generals Zero Hour_ to explore the different road types and their features.
 

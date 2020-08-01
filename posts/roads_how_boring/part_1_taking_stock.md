@@ -10,7 +10,7 @@ Figuring out how to render the roads correctly in OpenSAGE turned out to be a li
 
 ![Roads in OpenSAGE](./open_sage_roads.jpg)
 
-Here's a list of all posts published so far:
+Here's a list of all posts:
 
 * [Part 1: Taking stock (this post)](/blog/roads-how-boring-part-1-taking-stock)
 * [Part 2: Inspecting the map file](/blog/roads-how-boring-part-2-inspecting-the-map-file)
@@ -22,6 +22,8 @@ Here's a list of all posts published so far:
 * [Part 8: Rendering crossings (continued)](/blog/roads-how-boring-part-8-rendering-crossings-continued)
 * [Part 9: Rendering curves](/blog/roads-how-boring-part-9-rendering-curves)
 * [Part 10: Considering the terrain](/blog/roads-how-boring-part-10-considering-the-terrain)
+* [Part 11: Rendering end caps](/blog/roads-how-boring-part-11-rendering-end-caps)
+* [Part 12: Summing up](/blog/roads-how-boring-part-12-summing-up)
 
 We'll start by creating a test map in the World Builder for _Command & Conquer Generals Zero Hour_ to explore the different road types and their features.
 

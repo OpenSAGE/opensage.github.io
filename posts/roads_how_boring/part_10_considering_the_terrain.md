@@ -73,5 +73,5 @@ But ignoring such edge cases, our solution does look quite nice ingame:
 
 ![Screenshot of the Alpine Assault map](./alpine_assault.jpg)
 
-We're almost done now! In the next (and last) chapter of this series, we will talk about the end caps.
+We're almost done now! In the [next](/blog/roads-how-boring-part-11-rendering-end-caps) chapter of this series, we will talk about the end caps.
 

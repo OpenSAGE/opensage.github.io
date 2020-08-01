@@ -24,7 +24,7 @@ In the [last post](/blog/roads-how-boring-part-10-considering-the-terrain) we to
 At first glance, that doesn't look too difficult, we just need to figure out the world and texture coordinates. We know how to do that by now, and that alone would hardly warrant an extra post.
 
 ## Joining different roads
-However, the checkbox says "Add end caps _and/or Join to different road_" and this is where things get interesting: When a road with an end cap ends near another road (of a different type), the end cap is rotated so that it forms a 90° angle with that other road. The straight road segment it belongs is modified accordingly (just like for [angled connections](/blog/roads-how-boring-part-5-connecting-the-road-segments)).
+However, the checkbox says "Add end caps _and/or Join to different road_" and this is where things get interesting: When a road with an end cap ends near another road (of a different type), the end cap is rotated so that it forms a 90° angle with that other road. The straight road segment it belongs to is modified accordingly (just like for [angled connections](/blog/roads-how-boring-part-5-connecting-the-road-segments)).
 
 ![A road with an end cap joining another road](./join.gif)
 
@@ -32,9 +32,9 @@ As you can see in the animation, this can lead to strange visual artefacts when 
 
 ### Finding joinable roads
 
-First, we need to find out if there is any road segment our end cap can join. We do that by looking at all straight road segments (joining curves or crosses does not work in the original engine).
+First, we need to find out if there is any road segment our end cap can join. We do that by looking at all straight road segments (joining curves or crossings does not work in the original engine).
 
-Let's start with a road segment, an end cap position and a direction of the road the segment belongs to. When the position is near enough, the end cap rectangle (green) is rotated to match the road segment and we need to calculate the angle `α`.
+Let's start with a road segment, an end cap position and a direction of the end cap's segment. When the position is near enough, the end cap rectangle (green) is rotated to match the road segment and we need to calculate the angle `α`.
 
 ![Road segment and rotated end cap](./end_caps_drawing_1.png)
 
@@ -50,7 +50,7 @@ Once we know the corner positions of that rectangle, a quick way to eliminate mo
 
 ![Axis-aligned bounding box](./end_caps_drawing_4.png)
 
-If it is, we need to check if is actually within the rectangle. We calculate the vector `StartToPosition` from the segment start position to the end cap position. The cross product of this vector and the `SegmentDirection` gives us the normal distance of the end cap position. Using the dot product, we can project `StartToPosition` onto `SegmentDirection` to get the `SignedDistanceFromStart`.
+If it is, we need to check if it actually is within the rectangle. We calculate the vector `StartToPosition` from the segment start position to the end cap position. The cross product of this vector and the `SegmentDirection` gives us the normal distance of the end cap position. Using the dot product, we can project `StartToPosition` onto `SegmentDirection` to get the `SignedDistanceFromStart`.
 
 ![Checking if the end cap position is in the target area](./end_caps_drawing_5.png)
 

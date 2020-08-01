@@ -41,12 +41,12 @@ img[src*=".gif"] {
     </span></p>
 <p>At first glance, that doesn't look too difficult, we just need to figure out the world and texture coordinates. We know how to do that by now, and that alone would hardly warrant an extra post.</p>
 <h2>Joining different roads</h2>
-<p>However, the checkbox says "Add end caps <em>and/or Join to different road</em>" and this is where things get interesting: When a road with an end cap ends near another road (of a different type), the end cap is rotated so that it forms a 90° angle with that other road. The straight road segment it belongs is modified accordingly (just like for <a href="/blog/roads-how-boring-part-5-connecting-the-road-segments">angled connections</a>).</p>
+<p>However, the checkbox says "Add end caps <em>and/or Join to different road</em>" and this is where things get interesting: When a road with an end cap ends near another road (of a different type), the end cap is rotated so that it forms a 90° angle with that other road. The straight road segment it belongs to is modified accordingly (just like for <a href="/blog/roads-how-boring-part-5-connecting-the-road-segments">angled connections</a>).</p>
 <p><img src="/0b6cc4a85d32ca3c6379750d3748054b/join.gif" alt="A road with an end cap joining another road"></p>
 <p>As you can see in the animation, this can lead to strange visual artefacts when the angle between the two roads becomes too small.</p>
 <h3>Finding joinable roads</h3>
-<p>First, we need to find out if there is any road segment our end cap can join. We do that by looking at all straight road segments (joining curves or crosses does not work in the original engine).</p>
-<p>Let's start with a road segment, an end cap position and a direction of the road the segment belongs to. When the position is near enough, the end cap rectangle (green) is rotated to match the road segment and we need to calculate the angle <code>α</code>.</p>
+<p>First, we need to find out if there is any road segment our end cap can join. We do that by looking at all straight road segments (joining curves or crossings does not work in the original engine).</p>
+<p>Let's start with a road segment, an end cap position and a direction of the end cap's segment. When the position is near enough, the end cap rectangle (green) is rotated to match the road segment and we need to calculate the angle <code>α</code>.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 600px;"
@@ -174,7 +174,7 @@ img[src*=".gif"] {
       />
   </a>
     </span></p>
-<p>If it is, we need to check if is actually within the rectangle. We calculate the vector <code>StartToPosition</code> from the segment start position to the end cap position. The cross product of this vector and the <code>SegmentDirection</code> gives us the normal distance of the end cap position. Using the dot product, we can project <code>StartToPosition</code> onto <code>SegmentDirection</code> to get the <code>SignedDistanceFromStart</code>.</p>
+<p>If it is, we need to check if it actually is within the rectangle. We calculate the vector <code>StartToPosition</code> from the segment start position to the end cap position. The cross product of this vector and the <code>SegmentDirection</code> gives us the normal distance of the end cap position. Using the dot product, we can project <code>StartToPosition</code> onto <code>SegmentDirection</code> to get the <code>SignedDistanceFromStart</code>.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 600px;"

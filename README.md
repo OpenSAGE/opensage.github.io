@@ -1,6 +1,6 @@
 # OpenSAGE website
 
-[![Build Status](https://travis-ci.org/OpenSAGE/opensage.github.io.svg?branch=master)](https://travis-ci.org/OpenSAGE/opensage.github.io)
+![Deploy to GitHub Pages](https://github.com/OpenSAGE/opensage.github.io/workflows/Deploy%20to%20GitHub%20Pages/badge.svg?branch=gh-pages)
 
 This is the website of the OpenSAGE project, based on [`gatsby`](https://www.gatsbyjs.org/).
 
@@ -11,7 +11,7 @@ Requires recent versions of both Node.js and `yarn` to build.
 1. Run `yarn` to install required packages.
 3. Run `yarn develop` to start the site in development mode. The server should start in http://localhost:8000, with automatic hot reload enabled.
 4. Run `yarn build` to generate a static site, which will be placed in `/public`. You can preview the generated site with `yarn serve` after building - the server should start in http://localhost:9000.
-5. The master branch is automatically deployed by Travis-CI.
+5. The `gh-pages` branch is automatically deployed by GitHub Actions.
 
 The project uses Prettier for automatic source code formatting. You can install it with `yarn global add prettier` and then run it using `yarn prettier`, or easily from VS Code with the [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
 

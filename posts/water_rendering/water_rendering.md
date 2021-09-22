@@ -25,7 +25,7 @@ In a nutshell, planar reflection is:
 
 This is done per plane so the more water plane present on the map, the more expensive it is.
 
-![Reflection Rendering](./1.jpg)
+![Reflection Rendering](./1.png)
 *<center>Figure 1: Camera For Reflection Rendering</center>*
 
 ## Refraction
@@ -34,7 +34,7 @@ So in a nutshell:
 1. Using the current player camera and clipping plane, render to a new frame buffer.
 2. Use the frame buffer as a texture on the plane and apply shader techniques to it to make it looks convincing.
 
-![Refraction Rendering](./2.jpg)
+![Refraction Rendering](./2.png)
 *<center>Figure 2: Camera For Refraction Rendering</center>*
 
 ## Waves
@@ -54,13 +54,18 @@ This is also done at shader level as well using fragment. The simplest and the o
 At higher level of shadering, I assume one may simulate casutics from the movement of the waves and direction of the lightsource.
 
 In a nutshell, you use add blending to apply the animated textures to terrain and objects under the water plane with respect to the depth of said subjects. The deeper the subject, the more transparent the apply should be.
-![Caustics Map](./cause.jpg)
+![Caustics Map](./cause.png)
 *<center>Figure 5: Samples of Caustics Map</center>*
 
-![Caustics Rendering](./3.jpg)
+![Caustics Rendering](./3.png)
 *<center>Figure 6: Caustics Rendering</center>*
 
 ## Miscellaneous
 **Fresnel Effect** A principle of reflectivity. Shallow angle = strong reflectivity, steep nagle weak reflectivity. By applying this principle to reflection and refraction rendering, one can improve the realism of water rendering.
-![Fresnel Rendering](./4.jpg)
+![Fresnel Rendering](./4.png)
 *<center>Figure 6: Fresnel Rendering</center>*
+
+## Result
+Combining those components together, you get the result down below: an improved version of vanilla water from early reveal screenshots. While not the fanciest water you might have ever seen but still, it looks more watery than AoE4's attempt.
+![Result](./result.png)
+With time and afford, you can make it even more convincing but that is a discussion for another time.

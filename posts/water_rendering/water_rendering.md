@@ -38,20 +38,20 @@ So in a nutshell:
 *<center>Figure 2: Camera For Refraction Rendering</center>*
 
 ## Waves
-This is done at shader level either via vertex or fragment. Many techniques could be used here including DuDv mapping, bump mapping, nomral mapping, etc.
+This is done at shader level either via vertex or fragment. Many techniques could be used here including DuDv mapping, bump mapping, normal mapping, etc.
 We'll using only fragment for this implementation.
 
-**DuDv Mapping** is simply a directoinal distortion map usually derived from a normal map. It only has R and G channels for offsetting U and V vaules of the texture. This creates ripple effect on the surface.
+**DuDv Mapping** is simply a directional distortion map usually derived from a normal map. It only has R and G channels for offsetting U and V values of the texture. This creates ripple effects on the surface.
 ![DuDv Map](./wdudv.jpg)
 *<center>Figure 3: Sample DvDu Map</center>*
 
-**Normal Mapping** is an extensive bump map uses for lighting calculation. Having all RGB channels, they are represented as XYZ directions. This creates the illusion of detailed surface without having a lot of polygons.
+**Normal Mapping** is an extensive bump map used for lighting calculation. Having all RGB channels, they are represented as XYZ directions. This creates the illusion of a detailed surface without having a lot of polygons.
 ![Normal Map](./wnormal.jpg)
 *<center>Figure 4: Sample Normal Map</center>*
 
 ## Caustics
 This is also done at shader level as well using fragment. The simplest and the only way I know how to do is using animated textures. By having a set of pre-baked textures, one can animate it to simulate the effects of caustics.
-At higher level of shadering, I assume one may simulate casutics from the movement of the waves and direction of the lightsource.
+At higher level of shadering, I assume one may simulate caustics from the movement of the waves and direction of the lightsource.
 
 In a nutshell, you use add blending to apply the animated textures to terrain and objects under the water plane with respect to the depth of said subjects. The deeper the subject, the more transparent the apply should be.
 ![Caustics Map](./cause.png)
@@ -61,11 +61,11 @@ In a nutshell, you use add blending to apply the animated textures to terrain an
 *<center>Figure 6: Caustics Rendering</center>*
 
 ## Miscellaneous
-**Fresnel Effect** A principle of reflectivity. Shallow angle = strong reflectivity, steep nagle weak reflectivity. By applying this principle to reflection and refraction rendering, one can improve the realism of water rendering.
+**Fresnel Effect** A principle of reflectivity. Shallow angle = strong reflectivity, steep angle = weak reflectivity. By applying this principle to reflection and refraction rendering, one can improve the realism of water rendering.
 ![Fresnel Rendering](./4.png)
 *<center>Figure 6: Fresnel Rendering</center>*
 
 ## Result
 Combining those components together, you get the result down below: an improved version of vanilla water from early reveal screenshots. While not the fanciest water you might have ever seen but still, it looks more watery than AoE4's attempt.
 ![Result](./result.png)
-With time and afford, you can make it even more convincing but that is a discussion for another time.
+With time and effort, you can make it even more convincing but that is a discussion for another time.

@@ -6,7 +6,7 @@ import { Layout } from "../Layout"
 
 import "./Post.css"
 
-export default ({ data }) => {
+const Main = ({ data }) => {
   if (data == null || data.markdownRemark == null) {
     return <Layout />
   }
@@ -55,6 +55,8 @@ export default ({ data }) => {
     </Layout>
   )
 }
+
+export default Main;
 
 export const query = graphql`
   query BlogPostBySlug($slug: String) {

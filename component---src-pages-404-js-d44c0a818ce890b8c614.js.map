@@ -1,0 +1,1 @@
+{"version":3,"file":"component---src-pages-404-js-d44c0a818ce890b8c614.js","mappings":"kJAEA,qBAAe,OACb,2BACE","sources":["webpack://opensage.github.io/./src/pages/404.js"],"sourcesContent":["import React from \"react\"\n\nexport default () => (\n  <div>\n    <h1>404 - Oh no's! We couldn't find that page :(</h1>\n  </div>\n)\n"],"names":[],"sourceRoot":""}

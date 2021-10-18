@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkopensage_github_io=self.webpackChunkopensage_github_io||[]).push([[883],{9616:function(e,n,t){t.r(n);var u=t(7294);n.default=function(){return u.createElement("div",null,u.createElement("h1",null,"404 - Oh no's! We couldn't find that page :("))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-d44c0a818ce890b8c614.js.map
